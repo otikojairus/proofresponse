@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!location || !service) {
     return {
-      title: "Page Not Found | PROOFRESPONSE",
+      title: "Page Not Found | restoxpertrestoration",
     };
   }
 
@@ -53,7 +53,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description,
       url: `${getSiteUrl()}${canonicalPath}`,
       type: "article",
-      siteName: "PROOFRESPONSE Restoration",
+      siteName: "restoxpertrestoration",
     },
   };
 }

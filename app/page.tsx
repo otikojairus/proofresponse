@@ -7,19 +7,19 @@ export default function Home() {
   const states = getStates();
 
   return (
-    <div className="min-h-screen bg-[#07131c] text-slate-100">
+    <div className="min-h-screen overflow-x-clip bg-[#07131c] text-slate-100">
       <main>
         <section className="relative overflow-hidden border-b border-[#1e4a63]">
           <div className="pointer-events-none absolute -top-20 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-[#1e4a63]/30 blur-3xl" />
           <div className="pointer-events-none absolute right-0 top-24 h-72 w-72 rounded-full bg-[#fbbf24]/25 blur-3xl" />
 
-          <div className="mx-auto grid max-w-7xl gap-10 px-6 py-20 md:grid-cols-[1.1fr_0.9fr] md:items-center">
+          <div className="mx-auto grid max-w-7xl gap-10 px-4 py-20 sm:px-6 md:grid-cols-[1.1fr_0.9fr] md:items-center">
             <div>
               <p className="mb-4 inline-flex rounded-full border border-[#fbbf24]/40 bg-[#fbbf24]/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#fbbf24]">
                 Water Damage Is Primary Focus
               </p>
-              <h1 className="text-4xl font-black leading-tight sm:text-6xl">
-                PROOFRESPONSE Restoration
+              <h1 className="max-w-full break-words text-3xl font-black leading-tight sm:text-6xl">
+                restoxpertrestoration
                 <span className="block bg-gradient-to-r from-[#9dc8e6] to-[#fbbf24] bg-clip-text text-transparent">
                   For Canadian Cities
                 </span>
@@ -45,30 +45,18 @@ export default function Home() {
             </div>
 
             <div className="relative rounded-2xl border border-[#1e4a63] bg-gradient-to-b from-[#0d2432] to-[#081824] p-6 shadow-2xl shadow-black/50">
-              <div className="mb-5 grid grid-cols-2 gap-3 text-center">
-                <div className="rounded-lg border border-[#1e4a63] bg-[#0b1f2c] p-3">
-                  <p className="text-2xl font-black text-[#fbbf24]">{states.length}</p>
-                  <p className="text-xs uppercase tracking-[0.15em] text-slate-300">Provinces</p>
-                </div>
-                <div className="rounded-lg border border-[#1e4a63] bg-[#0b1f2c] p-3">
-                  <p className="text-2xl font-black text-[#fbbf24]">{LOCATION_PAGES.length}</p>
-                  <p className="text-xs uppercase tracking-[0.15em] text-slate-300">Cities</p>
-                </div>
-              </div>
-              <h2 className="text-xl font-bold text-[#fbbf24]">Service Coverage</h2>
-              <ul className="mt-4 space-y-3 text-sm text-slate-300">
-                <li className="flex items-center justify-between border-b border-[#1e4a63] pb-3">
-                  <span>Service Lines</span>
-                  <span className="font-semibold text-slate-100">{SERVICE_ORDER.length}</span>
-                </li>
-                <li className="flex items-center justify-between border-b border-[#1e4a63] pb-3">
-                  <span>Cities Covered</span>
-                  <span className="font-semibold text-slate-100">{LOCATION_PAGES.length}</span>
-                </li>
-                <li className="flex items-center justify-between">
-                  <span>Primary Service</span>
-                  <span className="font-semibold text-[#fbbf24]">{primaryService.name}</span>
-                </li>
+              <h2 className="text-xl font-bold text-[#fbbf24]">Cities We Serve</h2>
+              <ul className="mt-4 grid grid-cols-1 gap-2 text-sm text-slate-300 sm:grid-cols-2">
+                {LOCATION_PAGES.map((location) => (
+                  <li key={`${location.stateSlug}-${location.citySlug}`}>
+                    <Link
+                      href={`/${location.stateSlug}/${location.citySlug}/water-damage`}
+                      className="block w-full rounded-md border border-[#1e4a63] bg-[#0b1f2c] px-3 py-2 transition hover:border-[#fbbf24] hover:text-white"
+                    >
+                      {location.cityName}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -97,18 +85,19 @@ export default function Home() {
                 "from-[#fbbf24]/25",
               ];
               return (
-                <article
+                <Link
                   key={service.slug}
+                  href={`/services/${service.slug}`}
                   className="group relative overflow-hidden rounded-xl border border-[#1e4a63] bg-[#0b1f2c] p-5 transition hover:-translate-y-1 hover:border-[#fbbf24]"
                 >
                   <div className={`absolute -right-8 -top-8 h-24 w-24 rounded-full bg-gradient-to-br ${accents[idx]} to-transparent blur-xl`} />
                   <p className="text-xs uppercase tracking-[0.2em] text-[#fbbf24]">{service.navLabel}</p>
                   <h3 className="mt-2 text-xl font-bold text-white">{service.name}</h3>
                   <p className="mt-3 text-sm text-slate-300">{service.shortDescription}</p>
-                  <Link className="mt-5 inline-flex text-sm font-semibold text-[#fbbf24] hover:brightness-110" href={`/services/${service.slug}`}>
+                  <span className="mt-5 inline-flex text-sm font-semibold text-[#fbbf24] hover:brightness-110">
                     Explore hub
-                  </Link>
-                </article>
+                  </span>
+                </Link>
               );
             })}
           </div>

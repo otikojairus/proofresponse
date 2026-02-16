@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { SERVICES, SERVICE_ORDER } from "@/lib/restoration-data";
@@ -24,17 +23,8 @@ export function SiteNavbar() {
       <header className="sticky top-0 z-40 border-b border-[#fbbf24]/30 bg-[#07131c]/95 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
           <Link href="/" className="flex items-center gap-3" onClick={() => setIsDrawerOpen(false)}>
-            <Image
-              src="/proofresponse-logo.svg"
-              alt="ProofResponse"
-              width={42}
-              height={42}
-              className="h-10 w-10"
-              priority
-            />
             <div>
-              <p className="text-base font-extrabold tracking-wide text-[#fbbf24] sm:text-lg">PROOFRESPONSE</p>
-              <p className="text-[10px] uppercase tracking-[0.22em] text-slate-300">Restoration</p>
+              <p className="text-base font-extrabold tracking-wide text-[#fbbf24] sm:text-lg">restoxpertrestoration</p>
             </div>
           </Link>
 

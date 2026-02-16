@@ -9,7 +9,7 @@ export default function ServicesPage() {
           <Link href="/" className="text-sm font-semibold text-[#fbbf24] hover:brightness-110">
             ← Back to Home
           </Link>
-          <h1 className="mt-4 text-4xl font-black">PROOFRESPONSE Canadian Service Hubs</h1>
+          <h1 className="mt-4 text-4xl font-black">restoxpertrestoration Canadian Service Hubs</h1>
           <p className="mt-3 max-w-3xl text-slate-300">
             Dedicated water damage, fire damage, mold remediation, and hazmat cleanup services across Canada.
           </p>
@@ -20,18 +20,19 @@ export default function ServicesPage() {
             const service = SERVICES[serviceSlug];
             const tones = ["from-[#1e4a63]/35", "from-[#fbbf24]/35", "from-[#1e4a63]/25", "from-[#fbbf24]/25"];
             return (
-              <article key={service.slug} className="relative overflow-hidden rounded-2xl border border-[#1e4a63] bg-[#0b1f2c] p-6">
+              <Link
+                key={service.slug}
+                href={`/services/${service.slug}`}
+                className="relative overflow-hidden rounded-2xl border border-[#1e4a63] bg-[#0b1f2c] p-6 transition hover:-translate-y-1 hover:border-[#fbbf24]"
+              >
                 <div className={`absolute -right-8 -top-8 h-28 w-28 rounded-full bg-gradient-to-br ${tones[idx]} to-transparent blur-xl`} />
                 <p className="relative text-xs uppercase tracking-[0.2em] text-[#fbbf24]">{service.navLabel}</p>
                 <h2 className="relative mt-2 text-2xl font-bold text-white">{service.name}</h2>
                 <p className="relative mt-3 text-slate-300">{service.shortDescription}</p>
-                <Link
-                  href={`/services/${service.slug}`}
-                  className="relative mt-5 inline-flex rounded-md bg-[#fbbf24] px-4 py-2 text-sm font-semibold text-[#1e4a63] hover:brightness-105"
-                >
+                <span className="relative mt-5 inline-flex rounded-md bg-[#fbbf24] px-4 py-2 text-sm font-semibold text-[#1e4a63] hover:brightness-105">
                   Open {service.name} Hub
-                </Link>
-              </article>
+                </span>
+              </Link>
             );
           })}
         </div>

@@ -21,11 +21,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!service) {
     return {
-      title: "Service Not Found | PROOFRESPONSE",
+      title: "Service Not Found | restoxpertrestoration",
     };
   }
 
-  const title = `${service.name} Service Areas | PROOFRESPONSE`;
+  const title = `${service.name} Service Areas | restoxpertrestoration`;
   const description = `Emergency ${service.name.toLowerCase()} coverage across major Canadian cities.`;
 
   return {
@@ -72,18 +72,13 @@ export default async function ServiceHubPage({ params }: PageProps) {
 
           <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {LOCATION_PAGES.map((location) => (
-              <article
+              <Link
                 key={`${location.stateSlug}-${location.citySlug}`}
-                className="rounded-xl border border-[#1e4a63] bg-gradient-to-b from-[#0b1f2c] to-[#081824] p-5"
+                href={`/${location.stateSlug}/${location.citySlug}/${service.slug}`}
+                className="rounded-xl border border-[#1e4a63] bg-gradient-to-b from-[#0b1f2c] to-[#081824] p-5 transition hover:-translate-y-0.5 hover:border-[#fbbf24]"
               >
-                <h3 className="text-lg font-bold text-white">
-                  {location.cityName}, {location.stateName}
-                </h3>
-                <p className="mt-2 text-sm text-slate-300">{location.regionName}</p>
-                <Link href={`/${location.stateSlug}/${location.citySlug}/${service.slug}`} className="mt-4 inline-flex text-sm font-semibold text-[#fbbf24] hover:brightness-110">
-                  Open local {service.navLabel} page
-                </Link>
-              </article>
+                <h3 className="text-lg font-bold text-white">{location.cityName}</h3>
+              </Link>
             ))}
           </div>
         </section>

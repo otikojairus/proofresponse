@@ -13,8 +13,8 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "PROOFRESPONSE Restoration",
-    template: "%s | PROOFRESPONSE Restoration",
+    default: "restoxpertrestoration",
+    template: "%s | restoxpertrestoration",
   },
   description:
     "Emergency water damage, fire damage, mold remediation, and hazmat cleanup services across Canada.",
