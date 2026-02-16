@@ -1,19 +1,72 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import { JsonLd } from "@/components/json-ld";
 import { SERVICES, SERVICE_ORDER } from "@/lib/restoration-data";
+import { EMERGENCY_PHONE_DISPLAY, SITE_NAME, absoluteUrl } from "@/lib/seo";
+
+export const metadata: Metadata = {
+  title: "Emergency Restoration Service Hubs",
+  description:
+    "Browse service hubs for emergency water damage restoration, fire damage restoration, mold remediation, and hazmat cleanup across Canadian cities.",
+  alternates: {
+    canonical: "/services",
+  },
+  openGraph: {
+    title: `${SITE_NAME} Service Hubs`,
+    description:
+      "Structured service pages with definitions, process steps, local internal links, and direct emergency call actions.",
+    type: "website",
+    url: absoluteUrl("/services"),
+    siteName: SITE_NAME,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${SITE_NAME} Service Hubs`,
+    description: "Open a service hub, pick a city page, and call for emergency dispatch.",
+  },
+  keywords: [
+    "emergency restoration services canada",
+    ...SERVICE_ORDER.map((serviceSlug) => SERVICES[serviceSlug].name.toLowerCase()),
+  ],
+};
 
 export default function ServicesPage() {
+  const listSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Restoration Service Hubs",
+    itemListElement: SERVICE_ORDER.map((serviceSlug, index) => {
+      const service = SERVICES[serviceSlug];
+      return {
+        "@type": "ListItem",
+        position: index + 1,
+        name: service.name,
+        url: absoluteUrl(`/services/${service.slug}`),
+      };
+    }),
+  };
+
   return (
     <main className="min-h-screen bg-[#07131c] px-6 py-16 text-slate-100">
+      <JsonLd data={listSchema} />
       <div className="mx-auto max-w-6xl">
         <div className="mb-10">
           <Link href="/" className="text-sm font-semibold text-[#fbbf24] hover:brightness-110">
             ← Back to Home
           </Link>
-          <h1 className="mt-4 text-4xl font-black">restoxpertrestoration Canadian Service Hubs</h1>
+          <h1 className="mt-4 text-4xl font-black">{SITE_NAME} Canadian Service Hubs</h1>
           <p className="mt-3 max-w-3xl text-slate-300">
-            Dedicated water damage, fire damage, mold remediation, and hazmat cleanup services across Canada.
+            Pick a service, select your location page, and call {EMERGENCY_PHONE_DISPLAY} for immediate help.
           </p>
         </div>
+
+        <section className="mb-8 rounded-2xl border border-[#1e4a63] bg-[#0b1f2c] p-6">
+          <h2 className="text-2xl font-bold text-white">Quick Answer</h2>
+          <p className="mt-3 text-slate-300">
+            <strong>Best page structure for emergency intent:</strong> service hub first, then city page with a clear call
+            action. Each route in this site supports extractable definitions, process steps, and FAQs.
+          </p>
+        </section>
 
         <div className="grid gap-6 md:grid-cols-2">
           {SERVICE_ORDER.map((serviceSlug, idx) => {
