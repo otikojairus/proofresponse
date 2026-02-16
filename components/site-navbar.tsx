@@ -24,7 +24,7 @@ export function SiteNavbar() {
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
           <Link href="/" className="flex items-center gap-3" onClick={() => setIsDrawerOpen(false)}>
             <div>
-              <p className="text-base font-extrabold tracking-wide text-[#fbbf24] sm:text-lg">restoxpertrestoration</p>
+              <p className="text-base font-extrabold tracking-wide text-[#fbbf24] sm:text-lg">RESTOXPERTRESTORATION</p>
             </div>
           </Link>
 
@@ -57,7 +57,7 @@ export function SiteNavbar() {
             aria-expanded={isDrawerOpen}
             aria-label="Open navigation menu"
             onClick={() => setIsDrawerOpen((open) => !open)}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-[#1e4a63] text-slate-100 md:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-md text-slate-100 md:hidden"
           >
             <span className="sr-only">Menu</span>
             <div className="flex w-5 flex-col gap-1.5">
@@ -69,49 +69,60 @@ export function SiteNavbar() {
         </div>
       </header>
 
-      {isDrawerOpen ? (
-        <div className="fixed inset-0 z-50 md:hidden" role="dialog" aria-modal="true">
-          <button
-            type="button"
-            aria-label="Close menu"
-            className="absolute inset-0 bg-black/60"
-            onClick={() => setIsDrawerOpen(false)}
-          />
-          <div className="absolute right-0 top-0 h-full w-[82%] max-w-sm border-l border-[#1e4a63] bg-[#081824] p-6">
-            <div className="flex items-center justify-between">
-              <p className="text-xs uppercase tracking-[0.2em] text-[#fbbf24]">Services</p>
-              <button
-                type="button"
-                onClick={() => setIsDrawerOpen(false)}
-                className="rounded-md border border-[#1e4a63] px-2 py-1 text-sm text-slate-300"
-              >
-                Close
-              </button>
-            </div>
-            <nav className="mt-6 flex flex-col gap-2">
-              {SERVICE_ORDER.map((serviceSlug) => {
-                const service = SERVICES[serviceSlug];
-                return (
-                  <Link
-                    key={service.slug}
-                    href={`/services/${service.slug}`}
-                    onClick={() => setIsDrawerOpen(false)}
-                    className="rounded-md border border-[#1e4a63] bg-[#0b1f2c] px-4 py-3 text-base font-semibold text-slate-100"
-                  >
-                    {service.name}
-                  </Link>
-                );
-              })}
-            </nav>
-            <a
-              href={phoneHref}
-              className="mt-6 block rounded-md bg-[#fbbf24] px-4 py-3 text-center text-base font-semibold text-[#1e4a63]"
+      <div
+        className={`fixed inset-0 z-50 md:hidden transition-[visibility] duration-300 ${
+          isDrawerOpen ? "visible" : "invisible"
+        }`}
+        role={isDrawerOpen ? "dialog" : undefined}
+        aria-modal={isDrawerOpen}
+        aria-hidden={!isDrawerOpen}
+      >
+        <button
+          type="button"
+          aria-label="Close menu"
+          className={`absolute inset-0 bg-black/60 transition-opacity duration-300 ${
+            isDrawerOpen ? "opacity-100" : "opacity-0"
+          }`}
+          onClick={() => setIsDrawerOpen(false)}
+        />
+        <div
+          className={`absolute right-0 top-0 h-full w-[82%] max-w-sm border-l border-[#1e4a63] bg-[#081824] p-6 transition-transform duration-300 ease-out ${
+            isDrawerOpen ? "translate-x-0" : "translate-x-full"
+          }`}
+        >
+          <div className="flex items-center justify-between">
+            <p className="text-xs uppercase tracking-[0.2em] text-[#fbbf24]">Services</p>
+            <button
+              type="button"
+              onClick={() => setIsDrawerOpen(false)}
+              className="rounded-md px-2 py-1 text-sm text-slate-300"
             >
-              Call {phoneDisplay}
-            </a>
+              X
+            </button>
           </div>
+          <nav className="mt-6 flex flex-col gap-2">
+            {SERVICE_ORDER.map((serviceSlug) => {
+              const service = SERVICES[serviceSlug];
+              return (
+                <Link
+                  key={service.slug}
+                  href={`/services/${service.slug}`}
+                  onClick={() => setIsDrawerOpen(false)}
+                  className="rounded-md border border-[#1e4a63] bg-[#0b1f2c] px-4 py-3 text-base font-semibold text-slate-100"
+                >
+                  {service.name}
+                </Link>
+              );
+            })}
+          </nav>
+          <a
+            href={phoneHref}
+            className="mt-6 block rounded-md bg-[#fbbf24] px-4 py-3 text-center text-base font-semibold text-[#1e4a63]"
+          >
+            Call {phoneDisplay}
+          </a>
         </div>
-      ) : null}
+      </div>
 
       <a
         href={phoneHref}
