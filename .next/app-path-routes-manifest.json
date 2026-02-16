@@ -1,0 +1,11 @@
+{
+  "/[state]/[city]/[service]/page": "/[state]/[city]/[service]",
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/favicon.ico/route": "/favicon.ico",
+  "/page": "/",
+  "/robots.txt/route": "/robots.txt",
+  "/services/[service]/page": "/services/[service]",
+  "/services/page": "/services",
+  "/sitemap.xml/route": "/sitemap.xml"
+}
