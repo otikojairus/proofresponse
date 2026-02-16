@@ -1,0 +1,9 @@
+<svg width="420" height="120" viewBox="0 0 420 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="420" height="120" rx="16" fill="none"/>
+  <g transform="translate(12,18)">
+    <rect x="0" y="0" width="84" height="84" rx="20" fill="#1e4a63"/>
+    <path d="M22 47l13 13 28-32" stroke="#6BC96B" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="110" y="58" fill="#1e4a63" font-family="Jost, Arial, sans-serif" font-size="40" font-weight="800">ProofResponse</text>
+  <text x="112" y="86" fill="#fbbf24" font-family="Jost, Arial, sans-serif" font-size="14" font-weight="600" letter-spacing="2">RESTORATION NETWORK</text>
+</svg>
