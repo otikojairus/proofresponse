@@ -130,6 +130,12 @@ export function SiteNavbar() {
       >
         Call Now: {phoneDisplay}
       </a>
+      <a
+        href={phoneHref}
+        className="fixed bottom-6 right-6 z-40 hidden rounded-xl bg-[#fbbf24] px-6 py-3 text-sm font-extrabold tracking-wide text-[#1e4a63] shadow-xl shadow-black/40 transition hover:brightness-105 md:inline-flex"
+      >
+        Call Now: {phoneDisplay}
+      </a>
     </>
   );
 }

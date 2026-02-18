@@ -55,6 +55,14 @@ const SERVICES = {
             {
                 q: "Can you support insurance documentation?",
                 a: "Yes. We provide moisture logs, photo evidence, and scope details that help support claim workflows."
+            },
+            {
+                q: "How long does structural drying usually take?",
+                a: "Drying timelines vary by material and moisture load, but most projects require active drying and monitoring over several days."
+            },
+            {
+                q: "Do you remove damaged drywall and flooring?",
+                a: "Yes. If materials are unsalvageable, teams can remove affected sections, sanitize the area, and prepare it for rebuild."
             }
         ],
         seo: {
@@ -93,6 +101,14 @@ const SERVICES = {
             {
                 q: "Do you coordinate with adjusters?",
                 a: "Yes. We provide clear scope documentation and progress records for insurance claim alignment."
+            },
+            {
+                q: "Can contents cleaning be included after a fire?",
+                a: "Yes. Depending on condition, affected belongings can be assessed, cleaned, and inventoried as part of recovery planning."
+            },
+            {
+                q: "What happens if there is water damage after firefighting?",
+                a: "The response can combine water extraction and drying with soot and smoke remediation to address both damage types together."
             }
         ],
         seo: {
@@ -131,6 +147,14 @@ const SERVICES = {
             {
                 q: "Is containment used during cleanup?",
                 a: "Yes. Containment and filtration are used to limit cross-contamination during removal work."
+            },
+            {
+                q: "Do you test air quality after remediation?",
+                a: "Post-remediation verification options can be coordinated to help confirm cleanup goals were met before normal occupancy resumes."
+            },
+            {
+                q: "Can mold return after remediation?",
+                a: "It can if moisture issues remain unresolved, which is why source control and humidity management are key parts of the plan."
             }
         ],
         seo: {
@@ -169,6 +193,14 @@ const SERVICES = {
             {
                 q: "Do you provide documentation for property managers or insurers?",
                 a: "Yes. Work summaries and incident documentation are available for operational and claim records."
+            },
+            {
+                q: "How is hazardous waste disposal handled?",
+                a: "Collected materials are packaged, transported, and documented through approved channels based on incident and regulatory requirements."
+            },
+            {
+                q: "Can occupied properties remain open during cleanup?",
+                a: "In some cases, partial operations can continue with strict containment zones, but it depends on hazard level and safety clearance."
             }
         ],
         seo: {
@@ -182,152 +214,512 @@ const SERVICES = {
         }
     }
 };
-const LOCATION_PAGES = [
+const PROVINCE_CITY_ROWS = [
     {
-        stateSlug: "ontario",
-        stateName: "Ontario",
-        citySlug: "toronto",
-        cityName: "Toronto",
-        regionName: "Greater Toronto Area",
-        countryName: "Canada",
-        cityHosts: [
-            "toronto.example.com",
-            "toronto.localhost"
+        province: "Alberta",
+        cities: [
+            "Airdrie",
+            "Beaumont",
+            "Brooks",
+            "Calgary",
+            "Camrose",
+            "Chestermere",
+            "Cold Lake",
+            "Edmonton",
+            "Fort Saskatchewan",
+            "Grande Prairie",
+            "Lacombe",
+            "Leduc",
+            "Lethbridge",
+            "Lloydminster",
+            "Medicine Hat",
+            "Red Deer",
+            "Spruce Grove",
+            "St. Albert",
+            "Wetaskiwin",
+            "Fort McMurray",
+            "Okotoks",
+            "Canmore"
         ]
     },
     {
-        stateSlug: "ontario",
-        stateName: "Ontario",
-        citySlug: "ottawa",
-        cityName: "Ottawa",
-        regionName: "National Capital Region",
-        countryName: "Canada",
-        cityHosts: [
-            "ottawa.example.com",
-            "ottawa.localhost"
+        province: "British Columbia",
+        cities: [
+            "Abbotsford",
+            "Armstrong",
+            "Burnaby",
+            "Campbell River",
+            "Castlegar",
+            "Chilliwack",
+            "Colwood",
+            "Coquitlam",
+            "Courtenay",
+            "Cranbrook",
+            "Dawson Creek",
+            "Delta",
+            "Duncan",
+            "Enderby",
+            "Fernie",
+            "Fort St. John",
+            "Grand Forks",
+            "Greenwood",
+            "Kamloops",
+            "Kelowna",
+            "Kimberley",
+            "Langford",
+            "Langley",
+            "Maple Ridge",
+            "Merritt",
+            "Mission",
+            "Nanaimo",
+            "Nelson",
+            "New Westminster",
+            "North Vancouver",
+            "Parksville",
+            "Penticton",
+            "Pitt Meadows",
+            "Port Alberni",
+            "Port Coquitlam",
+            "Port Moody",
+            "Powell River",
+            "Prince George",
+            "Prince Rupert",
+            "Quesnel",
+            "Revelstoke",
+            "Richmond",
+            "Rossland",
+            "Salmon Arm",
+            "Surrey",
+            "Terrace",
+            "Trail",
+            "Vancouver",
+            "Vernon",
+            "Victoria",
+            "West Kelowna",
+            "White Rock",
+            "Williams Lake",
+            "West Vancouver",
+            "North Delta",
+            "Squamish",
+            "Whistler"
         ]
     },
     {
-        stateSlug: "ontario",
-        stateName: "Ontario",
-        citySlug: "mississauga",
-        cityName: "Mississauga",
-        regionName: "Peel Region",
-        countryName: "Canada",
-        cityHosts: [
-            "mississauga.example.com",
-            "mississauga.localhost"
+        province: "Manitoba",
+        cities: [
+            "Brandon",
+            "Dauphin",
+            "Flin Flon",
+            "Morden",
+            "Selkirk",
+            "Steinbach",
+            "Thompson",
+            "Winkler",
+            "Winnipeg",
+            "Portage la Prairie"
         ]
     },
     {
-        stateSlug: "british-columbia",
-        stateName: "British Columbia",
-        citySlug: "vancouver",
-        cityName: "Vancouver",
-        regionName: "Metro Vancouver",
-        countryName: "Canada",
-        cityHosts: [
-            "vancouver.example.com",
-            "vancouver.localhost"
+        province: "New Brunswick",
+        cities: [
+            "Bathurst",
+            "Campbellton",
+            "Dieppe",
+            "Edmundston",
+            "Fredericton",
+            "Miramichi",
+            "Moncton",
+            "Saint John",
+            "Riverview",
+            "Quispamsis"
         ]
     },
     {
-        stateSlug: "british-columbia",
-        stateName: "British Columbia",
-        citySlug: "surrey",
-        cityName: "Surrey",
-        regionName: "Metro Vancouver",
-        countryName: "Canada",
-        cityHosts: [
-            "surrey.example.com",
-            "surrey.localhost"
+        province: "Newfoundland and Labrador",
+        cities: [
+            "Corner Brook",
+            "Mount Pearl",
+            "St. John's",
+            "Grand Falls-Windsor",
+            "Gander",
+            "Happy Valley-Goose Bay"
         ]
     },
     {
-        stateSlug: "british-columbia",
-        stateName: "British Columbia",
-        citySlug: "victoria",
-        cityName: "Victoria",
-        regionName: "Capital Regional District",
-        countryName: "Canada",
-        cityHosts: [
-            "victoria.example.com",
-            "victoria.localhost"
+        province: "Northwest Territories",
+        cities: [
+            "Yellowknife"
         ]
     },
     {
-        stateSlug: "alberta",
-        stateName: "Alberta",
-        citySlug: "calgary",
-        cityName: "Calgary",
-        regionName: "Calgary Metropolitan Region",
-        countryName: "Canada",
-        cityHosts: [
-            "calgary.example.com",
-            "calgary.localhost"
+        province: "Nova Scotia",
+        cities: [
+            "Halifax",
+            "Sydney",
+            "Truro",
+            "New Glasgow",
+            "Kentville",
+            "Amherst"
         ]
     },
     {
-        stateSlug: "alberta",
-        stateName: "Alberta",
-        citySlug: "edmonton",
-        cityName: "Edmonton",
-        regionName: "Edmonton Metropolitan Region",
-        countryName: "Canada",
-        cityHosts: [
-            "edmonton.example.com",
-            "edmonton.localhost"
+        province: "Nunavut",
+        cities: [
+            "Iqaluit"
         ]
     },
     {
-        stateSlug: "alberta",
-        stateName: "Alberta",
-        citySlug: "red-deer",
-        cityName: "Red Deer",
-        regionName: "Central Alberta",
-        countryName: "Canada",
-        cityHosts: [
-            "red-deer.example.com",
-            "red-deer.localhost"
+        province: "Ontario",
+        cities: [
+            "Ajax",
+            "Barrie",
+            "Belleville",
+            "Brampton",
+            "Brantford",
+            "Brockville",
+            "Burlington",
+            "Cambridge",
+            "Clarence-Rockland",
+            "Cornwall",
+            "Dryden",
+            "Elliot Lake",
+            "Greater Sudbury",
+            "Guelph",
+            "Hamilton",
+            "Kawartha Lakes",
+            "Kingston",
+            "Kitchener",
+            "London",
+            "Markham",
+            "Mississauga",
+            "Niagara Falls",
+            "North Bay",
+            "Oakville",
+            "Oshawa",
+            "Ottawa",
+            "Pembroke",
+            "Peterborough",
+            "Pickering",
+            "Richmond Hill",
+            "Sarnia",
+            "Sault Ste. Marie",
+            "St. Catharines",
+            "St. Thomas",
+            "Thorold",
+            "Thunder Bay",
+            "Timmins",
+            "Toronto",
+            "Vaughan",
+            "Waterloo",
+            "Welland",
+            "Windsor",
+            "Milton",
+            "Whitby",
+            "Orangeville",
+            "Newmarket",
+            "Aurora",
+            "Stouffville",
+            "Orillia",
+            "Woodstock",
+            "Leamington"
         ]
     },
     {
-        stateSlug: "quebec",
-        stateName: "Quebec",
-        citySlug: "montreal",
-        cityName: "Montreal",
-        regionName: "Montreal Metropolitan Community",
-        countryName: "Canada",
-        cityHosts: [
-            "montreal.example.com",
-            "montreal.localhost"
+        province: "Prince Edward Island",
+        cities: [
+            "Charlottetown",
+            "Summerside"
         ]
     },
     {
-        stateSlug: "quebec",
-        stateName: "Quebec",
-        citySlug: "quebec-city",
-        cityName: "Quebec City",
-        regionName: "Capitale-Nationale",
-        countryName: "Canada",
-        cityHosts: [
-            "quebec-city.example.com",
-            "quebec-city.localhost"
+        province: "Quebec",
+        cities: [
+            "Acton Vale",
+            "Alma",
+            "Amos",
+            "Amqui",
+            "Baie-Comeau",
+            "Baie-D'Urfé",
+            "Baie-Saint-Paul",
+            "Barkmere",
+            "Beaconsfield",
+            "Beauceville",
+            "Beauharnois",
+            "Beaupré",
+            "Bécancour",
+            "Bedford",
+            "Belleterre",
+            "Beloeil",
+            "Berthierville",
+            "Blainville",
+            "Boisbriand",
+            "Bois-des-Filion",
+            "Bonaventure",
+            "Boucherville",
+            "Bromont",
+            "Brossard",
+            "Brownsburg-Chatham",
+            "Candiac",
+            "Cap-Chat",
+            "Cap-Santé",
+            "Carignan",
+            "Carleton-sur-Mer",
+            "Causapscal",
+            "Chambly",
+            "Chandler",
+            "Chapais",
+            "Charlemagne",
+            "Châteauguay",
+            "Château-Richer",
+            "Chibougamau",
+            "Clermont",
+            "Coaticook",
+            "Contrecoeur",
+            "Cookshire-Eaton",
+            "Coteau-du-Lac",
+            "Côte-Saint-Luc",
+            "Cowansville",
+            "Crabtree",
+            "Danville",
+            "Daveluyville",
+            "Dégelis",
+            "Delson",
+            "Desbiens",
+            "Deux-Montagnes",
+            "Disraeli",
+            "Dolbeau-Mistassini",
+            "Dollard-des-Ormeaux",
+            "Donnacona",
+            "Dorval",
+            "Drummondville",
+            "Dunham",
+            "Duparquet",
+            "East Angus",
+            "Estérel",
+            "Farnham",
+            "Fermont",
+            "Forestville",
+            "Fossambault-sur-le-Lac",
+            "Gaspé",
+            "Gatineau",
+            "Gracefield",
+            "Granby",
+            "Grande-Rivière",
+            "Hampstead",
+            "Hudson",
+            "Huntingdon",
+            "Joliette",
+            "Kingsey Falls",
+            "Kirkland",
+            "La Malbaie",
+            "La Pocatière",
+            "La Prairie",
+            "La Sarre",
+            "La Tuque",
+            "Lac-Brome",
+            "Lac-Delage",
+            "Lac-des-Aigles",
+            "Lachute",
+            "Lac-Mégantic",
+            "Lac-Saint-Joseph",
+            "Lac-Sergent",
+            "L'Ancienne-Lorette",
+            "L'Assomption",
+            "Laval",
+            "Lavaltrie",
+            "Lebel-sur-Quévillon",
+            "L'Épiphanie",
+            "Léry",
+            "Lévis",
+            "L'Île-Cadieux",
+            "L'Île-Dorval",
+            "L'Île-Perrot",
+            "Longueuil",
+            "Lorraine",
+            "Louiseville",
+            "Macamic",
+            "Magog",
+            "Malartic",
+            "Maniwaki",
+            "Marieville",
+            "Mascouche",
+            "Matagami",
+            "Matane",
+            "McMasterville",
+            "Mercier",
+            "Métabetchouan--Lac-à-la-Croix",
+            "Métis-sur-Mer",
+            "Mirabel",
+            "Mont-Joli",
+            "Mont-Laurier",
+            "Montmagny",
+            "Montréal",
+            "Montréal-Est",
+            "Montréal-Ouest",
+            "Mont-Royal",
+            "Mont-Saint-Hilaire",
+            "Mont-Tremblant",
+            "Murdochville",
+            "Neuville",
+            "New Richmond",
+            "Nicolet",
+            "Normandin",
+            "Notre-Dame-de-l'Île-Perrot",
+            "Notre-Dame-des-Prairies",
+            "Otterburn Park",
+            "Paspébiac",
+            "Percé",
+            "Pincourt",
+            "Plessisville",
+            "Pohénégamook",
+            "Pointe-Claire",
+            "Pont-Rouge",
+            "Port-Cartier",
+            "Portneuf",
+            "Prévost",
+            "Princeville",
+            "Québec",
+            "Repentigny",
+            "Richelieu",
+            "Richmond",
+            "Rigaud",
+            "Rimouski",
+            "Rivière-du-Loup",
+            "Rivière-Rouge",
+            "Roberval",
+            "Rosemère",
+            "Rouyn-Noranda",
+            "Saguenay",
+            "Saint-Amable",
+            "Saint-Antonin",
+            "Saint-Augustin-de-Desmaures",
+            "Saint-Basile",
+            "Saint-Basile-le-Grand",
+            "Saint-Bruno-de-Montarville",
+            "Saint-Césaire",
+            "Saint-Charles-Borromée",
+            "Saint-Colomban",
+            "Saint-Constant",
+            "Sainte-Adèle",
+            "Sainte-Agathe-des-Monts",
+            "Sainte-Anne-de-Beaupré",
+            "Sainte-Anne-de-Bellevue",
+            "Sainte-Anne-des-Monts",
+            "Sainte-Anne-des-Plaines",
+            "Sainte-Brigitte-de-Laval",
+            "Sainte-Catherine",
+            "Sainte-Catherine-de-la-Jacques-Cartier",
+            "Sainte-Julie",
+            "Sainte-Marguerite-du-Lac-Masson",
+            "Sainte-Marie",
+            "Sainte-Marthe-sur-le-Lac",
+            "Sainte-Thérèse",
+            "Saint-Eustache",
+            "Saint-Félicien",
+            "Saint-Gabriel",
+            "Saint-Georges",
+            "Saint-Honoré",
+            "Saint-Hyacinthe",
+            "Saint-Jean-sur-Richelieu",
+            "Saint-Jérôme",
+            "Saint-Joseph-de-Beauce",
+            "Saint-Joseph-de-Sorel",
+            "Saint-Lambert",
+            "Saint-Lazare",
+            "Saint-Lin--Laurentides",
+            "Saint-Marc-des-Carrières",
+            "Saint-Ours",
+            "Saint-Pamphile",
+            "Saint-Pascal",
+            "Saint-Philippe",
+            "Saint-Pie",
+            "Saint-Raymond",
+            "Saint-Rémi",
+            "Saint-Sauveur",
+            "Saint-Tite",
+            "Saint-Zotique",
+            "Salaberry-de-Valleyfield",
+            "Schefferville",
+            "Scotstown",
+            "Senneterre",
+            "Sept-Îles",
+            "Shannon",
+            "Shawinigan",
+            "Sherbrooke",
+            "Sorel-Tracy",
+            "Stanstead",
+            "Sutton",
+            "Témiscaming",
+            "Témiscouata-sur-le-Lac",
+            "Terrebonne",
+            "Thetford Mines",
+            "Thurso",
+            "Trois-Pistoles",
+            "Trois-Rivières",
+            "Valcourt",
+            "Val-des-Sources",
+            "Val-d'Or",
+            "Varennes",
+            "Vaudreuil-Dorion",
+            "Victoriaville",
+            "Ville-Marie",
+            "Warwick",
+            "Waterloo",
+            "Waterville",
+            "Westmount",
+            "Windsor"
         ]
     },
     {
-        stateSlug: "quebec",
-        stateName: "Quebec",
-        citySlug: "laval",
-        cityName: "Laval",
-        regionName: "Laval Region",
-        countryName: "Canada",
-        cityHosts: [
-            "laval.example.com",
-            "laval.localhost"
+        province: "Saskatchewan",
+        cities: [
+            "Estevan",
+            "Flin Flon",
+            "Humboldt",
+            "Kindersley",
+            "Lloydminster",
+            "Martensville",
+            "Melville",
+            "Moose Jaw",
+            "North Battleford",
+            "Prince Albert",
+            "Regina",
+            "Saskatoon",
+            "Swift Current",
+            "Warman",
+            "Weyburn",
+            "Yorkton",
+            "Melfort"
+        ]
+    },
+    {
+        province: "Yukon",
+        cities: [
+            "Whitehorse"
         ]
     }
 ];
+function slugifyLocationSegment(value) {
+    return value.normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+}
+const LOCATION_PAGES = PROVINCE_CITY_ROWS.flatMap(({ province, cities })=>{
+    const stateSlug = slugifyLocationSegment(province);
+    return cities.map((cityName)=>{
+        const citySlug = slugifyLocationSegment(cityName);
+        return {
+            stateSlug,
+            stateName: province,
+            citySlug,
+            cityName,
+            regionName: province,
+            countryName: "Canada",
+            cityHosts: [
+                `${citySlug}.example.com`,
+                `${citySlug}.localhost`
+            ]
+        };
+    });
+});
 const SERVICE_ORDER = [
     "water-damage",
     "fire-damage",
@@ -618,6 +1010,18 @@ function SiteNavbar() {
             }, void 0, true, {
                 fileName: "[project]/components/site-navbar.tsx",
                 lineNumber: 127,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                href: phoneHref,
+                className: "fixed bottom-6 right-6 z-40 hidden rounded-xl bg-[#fbbf24] px-6 py-3 text-sm font-extrabold tracking-wide text-[#1e4a63] shadow-xl shadow-black/40 transition hover:brightness-105 md:inline-flex",
+                children: [
+                    "Call Now: ",
+                    phoneDisplay
+                ]
+            }, void 0, true, {
+                fileName: "[project]/components/site-navbar.tsx",
+                lineNumber: 133,
                 columnNumber: 7
             }, this)
         ]

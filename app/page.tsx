@@ -96,11 +96,8 @@ export default function Home() {
           <div className="pointer-events-none absolute -top-20 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-[#1e4a63]/30 blur-3xl" />
           <div className="pointer-events-none absolute right-0 top-24 h-72 w-72 rounded-full bg-[#fbbf24]/25 blur-3xl" />
 
-          <div className="mx-auto grid max-w-7xl gap-10 px-4 py-20 sm:px-6 md:grid-cols-[1.1fr_0.9fr] md:items-center">
+          <div className="mx-auto grid max-w-7xl gap-10 px-4 pb-20 pt-0 sm:px-6 md:grid-cols-[1.1fr_0.9fr] md:items-center">
             <div>
-              <p className="mb-4 inline-flex rounded-full border border-[#fbbf24]/40 bg-[#fbbf24]/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#fbbf24]">
-                Emergency Intake 24/7
-              </p>
               <h1 className="max-w-full break-words text-3xl font-black leading-tight sm:text-6xl">
                 {SITE_NAME}
                 <span className="block bg-gradient-to-r from-[#9dc8e6] to-[#fbbf24] bg-clip-text text-transparent">

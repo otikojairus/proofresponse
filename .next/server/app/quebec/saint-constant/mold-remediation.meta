@@ -1,0 +1,17 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/[state]/layout,_N_T_/[state]/[city]/layout,_N_T_/[state]/[city]/[service]/layout,_N_T_/[state]/[city]/[service]/page,_N_T_/quebec/saint-constant/mold-remediation"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/$d$state/$d$city/$d$service/__PAGE__",
+    "/$d$state/$d$city/$d$service",
+    "/$d$state/$d$city",
+    "/$d$state",
+    "/_index",
+    "/_head"
+  ]
+}
