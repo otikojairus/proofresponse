@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { LOCATION_PAGES, SERVICE_ORDER } from "@/lib/restoration-data";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://restoxpertrestoration.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();

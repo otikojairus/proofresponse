@@ -1,5 +1,5 @@
 export const SITE_NAME = "RestoXpert Restoration";
-export const DEFAULT_SITE_URL = "http://localhost:3000";
+export const DEFAULT_SITE_URL = "https://restoxpertrestoration.com";
 export const EMERGENCY_PHONE_DISPLAY = "(888) 480-7473";
 export const EMERGENCY_PHONE_E164 = "+18884807473";
 
