@@ -121,8 +121,8 @@ export function SiteNavbar() {
         <a href={phoneHref} className="iris-btn iris-btn-primary shadow-lg">
           Call Now
         </a>
-        <Link href="/services" className="iris-btn iris-btn-dark shadow-lg">
-          Services
+        <Link href="/services" aria-label="Open services page" className="iris-btn iris-btn-dark shadow-lg">
+          SERVICES
         </Link>
       </div>
     </>

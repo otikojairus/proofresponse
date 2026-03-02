@@ -124,12 +124,16 @@ export default function Home() {
                 location page when you are ready for local dispatch across both countries.
               </p>
               <div className="iris-actions">
-                <a href={`tel:${EMERGENCY_PHONE_DISPLAY.replace(/[^0-9]/g, "")}`} className="iris-btn iris-btn-primary">
-                  Call {EMERGENCY_PHONE_DISPLAY}
-                </a>
-                <Link href="/services" className="iris-btn iris-btn-secondary">
-                  Explore Service Hubs
-                </Link>
+                <div className="hidden sm:block">
+                  <a href={`tel:${EMERGENCY_PHONE_DISPLAY.replace(/[^0-9]/g, "")}`} className="iris-btn iris-btn-primary">
+                    Call {EMERGENCY_PHONE_DISPLAY}
+                  </a>
+                </div>
+                <div className="hidden sm:block">
+                  <Link href="/services" className="iris-btn iris-btn-secondary">
+                    Explore Service Hubs
+                  </Link>
+                </div>
               </div>
             </div>
 
