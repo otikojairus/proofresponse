@@ -618,13 +618,15 @@ export default async function LocalServicePage({ params }: PageProps) {
             decision support for property owners and managers in {location.cityName}.
           </p>
 
-          <div className="iris-actions">
-            <a href={phoneHref} className="iris-btn iris-btn-primary">
-              Call {EMERGENCY_PHONE_DISPLAY}
-            </a>
-            <Link href="/services" className="iris-btn iris-btn-secondary">
-              View All Services
-            </Link>
+          <div className="hidden sm:block">
+            <div className="iris-actions">
+              <a href={phoneHref} className="iris-btn iris-btn-primary">
+                Call {EMERGENCY_PHONE_DISPLAY}
+              </a>
+              <Link href="/services" className="iris-btn iris-btn-secondary">
+                View All Services
+              </Link>
+            </div>
           </div>
         </div>
       </section>

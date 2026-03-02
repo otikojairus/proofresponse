@@ -101,13 +101,15 @@ export default function ServicesPage() {
             Inside this page you can review service pathways, first-response priorities, and post-call expectations so
             you can make a confident decision fast.
           </p>
-          <div className="iris-actions">
-            <a href={`tel:${EMERGENCY_PHONE_DISPLAY.replace(/[^0-9]/g, "")}`} className="iris-btn iris-btn-primary">
-              Call {EMERGENCY_PHONE_DISPLAY}
-            </a>
-            <Link href="/services/water-damage" className="iris-btn iris-btn-secondary">
-              Start With Water Damage
-            </Link>
+          <div className="hidden sm:block">
+            <div className="iris-actions">
+              <a href={`tel:${EMERGENCY_PHONE_DISPLAY.replace(/[^0-9]/g, "")}`} className="iris-btn iris-btn-primary">
+                Call {EMERGENCY_PHONE_DISPLAY}
+              </a>
+              <Link href="/services/water-damage" className="iris-btn iris-btn-secondary">
+                Start With Water Damage
+              </Link>
+            </div>
           </div>
         </div>
       </section>
