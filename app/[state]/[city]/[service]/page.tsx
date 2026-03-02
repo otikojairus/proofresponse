@@ -17,16 +17,16 @@ type PageProps = {
 
 export const revalidate = 86400;
 const WATER_DAMAGE_KEYWORDS = [
-  { phrase: "water damage restoration", range: "$3,000-$25,000+" },
-  { phrase: "emergency water removal", range: "$1,500-$7,500" },
-  { phrase: "flood cleanup", range: "$2,500-$20,000+" },
-  { phrase: "basement flooding cleanup", range: "$2,000-$15,000+" },
-  { phrase: "emergency flood restoration", range: "$4,000-$30,000+" },
-  { phrase: "water extraction", range: "$1,200-$6,000" },
-  { phrase: "flooded basement help", range: "$1,500-$12,000" },
-  { phrase: "storm water damage repair", range: "$3,000-$25,000+" },
-  { phrase: "burst pipe water cleanup", range: "$2,000-$15,000+" },
-  { phrase: "24 hour water damage service", range: "$2,000-$18,000+" },
+  { phrase: "water damage restoration" },
+  { phrase: "emergency water removal" },
+  { phrase: "flood cleanup" },
+  { phrase: "basement flooding cleanup" },
+  { phrase: "emergency flood restoration" },
+  { phrase: "water extraction" },
+  { phrase: "flooded basement help" },
+  { phrase: "storm water damage repair" },
+  { phrase: "burst pipe water cleanup" },
+  { phrase: "24 hour water damage service" },
 ] as const;
 const TRUST_CARDS = [
   {
@@ -814,7 +814,9 @@ export default async function LocalServicePage({ params }: PageProps) {
                       <p className="font-semibold text-[#0d2d44]">
                         {item.phrase} {location.cityName}
                       </p>
-                      <p className="mt-1 text-sm text-[#5c6875]">Typical project range: {item.range}</p>
+                      <p className="mt-1 text-sm text-[#5c6875]">
+                        Scope and timeline depend on how quickly mitigation begins and how far moisture has spread.
+                      </p>
                     </div>
                   ))}
                 </div>

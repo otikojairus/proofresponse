@@ -382,24 +382,24 @@ export default async function ServiceHubPage({ params, searchParams }: PageProps
               </div>
               <div className="mt-4 grid gap-4 md:grid-cols-3">
                 <div className="iris-panel">
-                  <h3 className="text-base font-bold text-[#0d2d44]">Typical Cost Driver: Scope</h3>
+                  <h3 className="text-base font-bold text-[#0d2d44]">Primary Driver: Scope</h3>
                   <p className="mt-2 text-sm text-[#5c6875]">
-                    Smaller isolated losses can begin around $1,200-$6,000, while broader flood restoration projects
-                    may range from $4,000-$30,000+ depending on material impact and contamination level.
+                    Smaller isolated losses usually require less demolition and a shorter drying cycle than broad,
+                    multi-area flood events with heavy material impact.
                   </p>
                 </div>
                 <div className="iris-panel">
-                  <h3 className="text-base font-bold text-[#0d2d44]">Typical Cost Driver: Area</h3>
+                  <h3 className="text-base font-bold text-[#0d2d44]">Primary Driver: Affected Area</h3>
                   <p className="mt-2 text-sm text-[#5c6875]">
-                    Basement and multi-room events often increase drying duration and demolition scope, commonly
-                    pushing project ranges into $2,000-$15,000+ or higher for severe incidents.
+                    Basement and multi-room events often increase equipment runtime, material removal needs, and total
+                    project complexity.
                   </p>
                 </div>
                 <div className="iris-panel">
-                  <h3 className="text-base font-bold text-[#0d2d44]">Typical Cost Driver: Urgency</h3>
+                  <h3 className="text-base font-bold text-[#0d2d44]">Primary Driver: Response Timing</h3>
                   <p className="mt-2 text-sm text-[#5c6875]">
                     Delays increase moisture spread, microbial growth risk, and material loss. Early mitigation is
-                    usually the most cost-efficient decision in flood cleanup and restoration.
+                    usually the most efficient recovery decision in flood cleanup and restoration.
                   </p>
                 </div>
               </div>

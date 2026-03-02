@@ -63,44 +63,34 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$seo$2e$ts__$5b$app$2d
 const revalidate = 86400;
 const WATER_DAMAGE_KEYWORDS = [
     {
-        phrase: "water damage restoration",
-        range: "$3,000-$25,000+"
+        phrase: "water damage restoration"
     },
     {
-        phrase: "emergency water removal",
-        range: "$1,500-$7,500"
+        phrase: "emergency water removal"
     },
     {
-        phrase: "flood cleanup",
-        range: "$2,500-$20,000+"
+        phrase: "flood cleanup"
     },
     {
-        phrase: "basement flooding cleanup",
-        range: "$2,000-$15,000+"
+        phrase: "basement flooding cleanup"
     },
     {
-        phrase: "emergency flood restoration",
-        range: "$4,000-$30,000+"
+        phrase: "emergency flood restoration"
     },
     {
-        phrase: "water extraction",
-        range: "$1,200-$6,000"
+        phrase: "water extraction"
     },
     {
-        phrase: "flooded basement help",
-        range: "$1,500-$12,000"
+        phrase: "flooded basement help"
     },
     {
-        phrase: "storm water damage repair",
-        range: "$3,000-$25,000+"
+        phrase: "storm water damage repair"
     },
     {
-        phrase: "burst pipe water cleanup",
-        range: "$2,000-$15,000+"
+        phrase: "burst pipe water cleanup"
     },
     {
-        phrase: "24 hour water damage service",
-        range: "$2,000-$18,000+"
+        phrase: "24 hour water damage service"
     }
 ];
 const TRUST_CARDS = [
@@ -753,31 +743,38 @@ async function LocalServicePage({ params }) {
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "iris-actions",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                    href: phoneHref,
-                                    className: "iris-btn iris-btn-primary",
-                                    children: [
-                                        "Call ",
-                                        __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$seo$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["EMERGENCY_PHONE_DISPLAY"]
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                    lineNumber: 622,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
-                                    href: "/services",
-                                    className: "iris-btn iris-btn-secondary",
-                                    children: "View All Services"
-                                }, void 0, false, {
-                                    fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                    lineNumber: 625,
-                                    columnNumber: 13
-                                }, this)
-                            ]
-                        }, void 0, true, {
+                            className: "hidden sm:block",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "iris-actions",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                        href: phoneHref,
+                                        className: "iris-btn iris-btn-primary",
+                                        children: [
+                                            "Call ",
+                                            __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$seo$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["EMERGENCY_PHONE_DISPLAY"]
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
+                                        lineNumber: 623,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
+                                        href: "/services",
+                                        className: "iris-btn iris-btn-secondary",
+                                        children: "View All Services"
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
+                                        lineNumber: 626,
+                                        columnNumber: 15
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
+                                lineNumber: 622,
+                                columnNumber: 13
+                            }, this)
+                        }, void 0, false, {
                             fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
                             lineNumber: 621,
                             columnNumber: 11
@@ -808,7 +805,7 @@ async function LocalServicePage({ params }) {
                                         children: "Quick Answer"
                                     }, void 0, false, {
                                         fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                        lineNumber: 636,
+                                        lineNumber: 638,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -818,27 +815,27 @@ async function LocalServicePage({ params }) {
                                                 children: primaryKeyword
                                             }, void 0, false, {
                                                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                lineNumber: 638,
+                                                lineNumber: 640,
                                                 columnNumber: 17
                                             }, this),
                                             " means rapid mitigation to limit property loss, followed by documented cleanup and stabilization."
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                        lineNumber: 637,
+                                        lineNumber: 639,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                lineNumber: 635,
+                                lineNumber: 637,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "iris-divider"
                             }, void 0, false, {
                                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                lineNumber: 642,
+                                lineNumber: 644,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -853,7 +850,7 @@ async function LocalServicePage({ params }) {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                        lineNumber: 645,
+                                        lineNumber: 647,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -866,13 +863,13 @@ async function LocalServicePage({ params }) {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                        lineNumber: 646,
+                                        lineNumber: 648,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                lineNumber: 644,
+                                lineNumber: 646,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -889,20 +886,20 @@ async function LocalServicePage({ params }) {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                lineNumber: 654,
+                                                lineNumber: 656,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                 children: "A structured emergency workflow that balances urgency, safety, and documentation quality."
                                             }, void 0, false, {
                                                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                lineNumber: 655,
+                                                lineNumber: 657,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                        lineNumber: 653,
+                                        lineNumber: 655,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -917,12 +914,12 @@ async function LocalServicePage({ params }) {
                                                             "aria-hidden": "true"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                            lineNumber: 661,
+                                                            lineNumber: 663,
                                                             columnNumber: 23
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                        lineNumber: 660,
+                                                        lineNumber: 662,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -930,7 +927,7 @@ async function LocalServicePage({ params }) {
                                                         children: card.title
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                        lineNumber: 663,
+                                                        lineNumber: 665,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -938,24 +935,24 @@ async function LocalServicePage({ params }) {
                                                         children: card.body
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                        lineNumber: 664,
+                                                        lineNumber: 666,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, card.title, true, {
                                                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                lineNumber: 659,
+                                                lineNumber: 661,
                                                 columnNumber: 19
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                        lineNumber: 657,
+                                        lineNumber: 659,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                lineNumber: 652,
+                                lineNumber: 654,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -969,7 +966,7 @@ async function LocalServicePage({ params }) {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                        lineNumber: 671,
+                                        lineNumber: 673,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("ol", {
@@ -985,25 +982,25 @@ async function LocalServicePage({ params }) {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                        lineNumber: 675,
+                                                        lineNumber: 677,
                                                         columnNumber: 21
                                                     }, this),
                                                     step
                                                 ]
                                             }, step, true, {
                                                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                lineNumber: 674,
+                                                lineNumber: 676,
                                                 columnNumber: 19
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                        lineNumber: 672,
+                                        lineNumber: 674,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                lineNumber: 670,
+                                lineNumber: 672,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1014,7 +1011,7 @@ async function LocalServicePage({ params }) {
                                         children: "Trust Signals"
                                     }, void 0, false, {
                                         fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                        lineNumber: 683,
+                                        lineNumber: 685,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1029,12 +1026,12 @@ async function LocalServicePage({ params }) {
                                                             "aria-hidden": "true"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                            lineNumber: 688,
+                                                            lineNumber: 690,
                                                             columnNumber: 23
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                        lineNumber: 687,
+                                                        lineNumber: 689,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1042,7 +1039,7 @@ async function LocalServicePage({ params }) {
                                                         children: card.title
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                        lineNumber: 690,
+                                                        lineNumber: 692,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1050,24 +1047,24 @@ async function LocalServicePage({ params }) {
                                                         children: card.body
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                        lineNumber: 691,
+                                                        lineNumber: 693,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, card.title, true, {
                                                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                lineNumber: 686,
+                                                lineNumber: 688,
                                                 columnNumber: 19
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                        lineNumber: 684,
+                                        lineNumber: 686,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                lineNumber: 682,
+                                lineNumber: 684,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1078,7 +1075,7 @@ async function LocalServicePage({ params }) {
                                         children: "What Happens In The First 24 Hours"
                                     }, void 0, false, {
                                         fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                        lineNumber: 698,
+                                        lineNumber: 700,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1086,13 +1083,13 @@ async function LocalServicePage({ params }) {
                                         children: "Initial call intake confirms safety concerns, access details, and urgency level. The early response window focuses on hazard control, containment, loss-limiting work, and documentation so recovery can move forward with fewer delays."
                                     }, void 0, false, {
                                         fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                        lineNumber: 699,
+                                        lineNumber: 701,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                lineNumber: 697,
+                                lineNumber: 699,
                                 columnNumber: 13
                             }, this),
                             isWaterDamage ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1109,20 +1106,20 @@ async function LocalServicePage({ params }) {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                lineNumber: 709,
+                                                lineNumber: 711,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                 children: "High-frequency incidents that usually require urgent stabilization and moisture control."
                                             }, void 0, false, {
                                                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                lineNumber: 710,
+                                                lineNumber: 712,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                        lineNumber: 708,
+                                        lineNumber: 710,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1137,12 +1134,12 @@ async function LocalServicePage({ params }) {
                                                             "aria-hidden": "true"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                            lineNumber: 716,
+                                                            lineNumber: 718,
                                                             columnNumber: 25
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                        lineNumber: 715,
+                                                        lineNumber: 717,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1150,7 +1147,7 @@ async function LocalServicePage({ params }) {
                                                         children: card.title
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                        lineNumber: 718,
+                                                        lineNumber: 720,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1158,24 +1155,24 @@ async function LocalServicePage({ params }) {
                                                         children: card.body
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                        lineNumber: 719,
+                                                        lineNumber: 721,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, card.title, true, {
                                                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                lineNumber: 714,
+                                                lineNumber: 716,
                                                 columnNumber: 21
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                        lineNumber: 712,
+                                        lineNumber: 714,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                lineNumber: 707,
+                                lineNumber: 709,
                                 columnNumber: 15
                             }, this) : null,
                             isWaterDamage ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1189,20 +1186,20 @@ async function LocalServicePage({ params }) {
                                                 children: "Top Priorities During Water Mitigation"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                lineNumber: 729,
+                                                lineNumber: 731,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                 children: "What property owners and managers usually care about most in early response."
                                             }, void 0, false, {
                                                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                lineNumber: 730,
+                                                lineNumber: 732,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                        lineNumber: 728,
+                                        lineNumber: 730,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1217,12 +1214,12 @@ async function LocalServicePage({ params }) {
                                                             "aria-hidden": "true"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                            lineNumber: 736,
+                                                            lineNumber: 738,
                                                             columnNumber: 25
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                        lineNumber: 735,
+                                                        lineNumber: 737,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1236,7 +1233,7 @@ async function LocalServicePage({ params }) {
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                                lineNumber: 739,
+                                                                lineNumber: 741,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1244,30 +1241,30 @@ async function LocalServicePage({ params }) {
                                                                 children: factor.body
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                                lineNumber: 742,
+                                                                lineNumber: 744,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                        lineNumber: 738,
+                                                        lineNumber: 740,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, factor.title, true, {
                                                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                lineNumber: 734,
+                                                lineNumber: 736,
                                                 columnNumber: 21
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                        lineNumber: 732,
+                                        lineNumber: 734,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                lineNumber: 727,
+                                lineNumber: 729,
                                 columnNumber: 15
                             }, this) : null,
                             isWaterDamage ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1281,20 +1278,20 @@ async function LocalServicePage({ params }) {
                                                 children: "What We Coordinate On Water-Damage Calls"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                lineNumber: 753,
+                                                lineNumber: 755,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                 children: "From first dispatch to mitigation closeout and recovery handoff."
                                             }, void 0, false, {
                                                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                lineNumber: 754,
+                                                lineNumber: 756,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                        lineNumber: 752,
+                                        lineNumber: 754,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1309,12 +1306,12 @@ async function LocalServicePage({ params }) {
                                                             "aria-hidden": "true"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                            lineNumber: 760,
+                                                            lineNumber: 762,
                                                             columnNumber: 25
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                        lineNumber: 759,
+                                                        lineNumber: 761,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1322,7 +1319,7 @@ async function LocalServicePage({ params }) {
                                                         children: card.title
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                        lineNumber: 762,
+                                                        lineNumber: 764,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1334,29 +1331,29 @@ async function LocalServicePage({ params }) {
                                                                 ]
                                                             }, point, true, {
                                                                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                                lineNumber: 765,
+                                                                lineNumber: 767,
                                                                 columnNumber: 27
                                                             }, this))
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                        lineNumber: 763,
+                                                        lineNumber: 765,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, card.title, true, {
                                                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                lineNumber: 758,
+                                                lineNumber: 760,
                                                 columnNumber: 21
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                        lineNumber: 756,
+                                        lineNumber: 758,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                lineNumber: 751,
+                                lineNumber: 753,
                                 columnNumber: 15
                             }, this) : null,
                             isWaterDamage ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1370,20 +1367,20 @@ async function LocalServicePage({ params }) {
                                                 children: "How To Prepare For Emergency Water Response"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                lineNumber: 777,
+                                                lineNumber: 779,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                 children: "Sharing these details early improves dispatch speed and scope accuracy."
                                             }, void 0, false, {
                                                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                lineNumber: 778,
+                                                lineNumber: 780,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                        lineNumber: 776,
+                                        lineNumber: 778,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1399,7 +1396,7 @@ async function LocalServicePage({ params }) {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                        lineNumber: 783,
+                                                        lineNumber: 785,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1407,24 +1404,24 @@ async function LocalServicePage({ params }) {
                                                         children: step
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                        lineNumber: 784,
+                                                        lineNumber: 786,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, step, true, {
                                                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                lineNumber: 782,
+                                                lineNumber: 784,
                                                 columnNumber: 21
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                        lineNumber: 780,
+                                        lineNumber: 782,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                lineNumber: 775,
+                                lineNumber: 777,
                                 columnNumber: 15
                             }, this) : null,
                             isWaterDamage ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1438,7 +1435,7 @@ async function LocalServicePage({ params }) {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                        lineNumber: 793,
+                                        lineNumber: 795,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1453,7 +1450,7 @@ async function LocalServicePage({ params }) {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                lineNumber: 797,
+                                                lineNumber: 799,
                                                 columnNumber: 19
                                             }, this),
                                             ",",
@@ -1465,7 +1462,7 @@ async function LocalServicePage({ params }) {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                lineNumber: 799,
+                                                lineNumber: 801,
                                                 columnNumber: 19
                                             }, this),
                                             ",",
@@ -1477,7 +1474,7 @@ async function LocalServicePage({ params }) {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                lineNumber: 801,
+                                                lineNumber: 803,
                                                 columnNumber: 19
                                             }, this),
                                             ", and",
@@ -1489,7 +1486,7 @@ async function LocalServicePage({ params }) {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                lineNumber: 803,
+                                                lineNumber: 805,
                                                 columnNumber: 19
                                             }, this),
                                             ". This page also addresses intents like",
@@ -1501,7 +1498,7 @@ async function LocalServicePage({ params }) {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                lineNumber: 805,
+                                                lineNumber: 807,
                                                 columnNumber: 19
                                             }, this),
                                             " and",
@@ -1513,14 +1510,14 @@ async function LocalServicePage({ params }) {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                lineNumber: 807,
+                                                lineNumber: 809,
                                                 columnNumber: 19
                                             }, this),
                                             "."
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                        lineNumber: 794,
+                                        lineNumber: 796,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1537,35 +1534,32 @@ async function LocalServicePage({ params }) {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                        lineNumber: 812,
+                                                        lineNumber: 814,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                         className: "mt-1 text-sm text-[#5c6875]",
-                                                        children: [
-                                                            "Typical project range: ",
-                                                            item.range
-                                                        ]
-                                                    }, void 0, true, {
+                                                        children: "Scope and timeline depend on how quickly mitigation begins and how far moisture has spread."
+                                                    }, void 0, false, {
                                                         fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                        lineNumber: 815,
+                                                        lineNumber: 817,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, item.phrase, true, {
                                                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                lineNumber: 811,
+                                                lineNumber: 813,
                                                 columnNumber: 21
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                        lineNumber: 809,
+                                        lineNumber: 811,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                lineNumber: 792,
+                                lineNumber: 794,
                                 columnNumber: 15
                             }, this) : null,
                             isWaterDamage ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1582,20 +1576,20 @@ async function LocalServicePage({ params }) {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                lineNumber: 825,
+                                                lineNumber: 829,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                 children: "Use these sections to find the exact help you need based on your current water emergency."
                                             }, void 0, false, {
                                                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                lineNumber: 826,
+                                                lineNumber: 830,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                        lineNumber: 824,
+                                        lineNumber: 828,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1613,12 +1607,12 @@ async function LocalServicePage({ params }) {
                                                                 "aria-hidden": "true"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                                lineNumber: 837,
+                                                                lineNumber: 841,
                                                                 columnNumber: 27
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                            lineNumber: 836,
+                                                            lineNumber: 840,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1629,7 +1623,7 @@ async function LocalServicePage({ params }) {
                                                                     children: section.title
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                                    lineNumber: 840,
+                                                                    lineNumber: 844,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1637,35 +1631,35 @@ async function LocalServicePage({ params }) {
                                                                     children: "Step-by-step response guidance"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                                    lineNumber: 841,
+                                                                    lineNumber: 845,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                            lineNumber: 839,
+                                                            lineNumber: 843,
                                                             columnNumber: 25
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                    lineNumber: 835,
+                                                    lineNumber: 839,
                                                     columnNumber: 23
                                                 }, this)
                                             }, section.id, false, {
                                                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                lineNumber: 830,
+                                                lineNumber: 834,
                                                 columnNumber: 21
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                        lineNumber: 828,
+                                        lineNumber: 832,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                lineNumber: 823,
+                                lineNumber: 827,
                                 columnNumber: 15
                             }, this) : null,
                             isWaterDamage ? waterKeywordSections.map((section, sectionIndex)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1680,7 +1674,7 @@ async function LocalServicePage({ params }) {
                                                     children: section.title
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                    lineNumber: 858,
+                                                    lineNumber: 862,
                                                     columnNumber: 23
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1688,13 +1682,13 @@ async function LocalServicePage({ params }) {
                                                     children: "Emergency Support"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                    lineNumber: 859,
+                                                    lineNumber: 863,
                                                     columnNumber: 23
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                            lineNumber: 857,
+                                            lineNumber: 861,
                                             columnNumber: 21
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1702,7 +1696,7 @@ async function LocalServicePage({ params }) {
                                             children: section.intro
                                         }, void 0, false, {
                                             fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                            lineNumber: 861,
+                                            lineNumber: 865,
                                             columnNumber: 21
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1716,7 +1710,7 @@ async function LocalServicePage({ params }) {
                                                             children: "Why This Service Matters"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                            lineNumber: 865,
+                                                            lineNumber: 869,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1728,18 +1722,18 @@ async function LocalServicePage({ params }) {
                                                                     ]
                                                                 }, item, true, {
                                                                     fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                                    lineNumber: 868,
+                                                                    lineNumber: 872,
                                                                     columnNumber: 29
                                                                 }, this))
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                            lineNumber: 866,
+                                                            lineNumber: 870,
                                                             columnNumber: 25
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                    lineNumber: 864,
+                                                    lineNumber: 868,
                                                     columnNumber: 23
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1750,7 +1744,7 @@ async function LocalServicePage({ params }) {
                                                             children: "Our Process"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                            lineNumber: 873,
+                                                            lineNumber: 877,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("ol", {
@@ -1765,7 +1759,7 @@ async function LocalServicePage({ params }) {
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                                            lineNumber: 877,
+                                                                            lineNumber: 881,
                                                                             columnNumber: 31
                                                                         }, this),
                                                                         " ",
@@ -1773,24 +1767,24 @@ async function LocalServicePage({ params }) {
                                                                     ]
                                                                 }, step, true, {
                                                                     fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                                    lineNumber: 876,
+                                                                    lineNumber: 880,
                                                                     columnNumber: 29
                                                                 }, this))
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                            lineNumber: 874,
+                                                            lineNumber: 878,
                                                             columnNumber: 25
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                    lineNumber: 872,
+                                                    lineNumber: 876,
                                                     columnNumber: 23
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                            lineNumber: 863,
+                                            lineNumber: 867,
                                             columnNumber: 21
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1809,7 +1803,7 @@ async function LocalServicePage({ params }) {
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                            lineNumber: 886,
+                                                            lineNumber: 890,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1821,18 +1815,18 @@ async function LocalServicePage({ params }) {
                                                                     ]
                                                                 }, reason, true, {
                                                                     fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                                    lineNumber: 889,
+                                                                    lineNumber: 893,
                                                                     columnNumber: 29
                                                                 }, this))
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                            lineNumber: 887,
+                                                            lineNumber: 891,
                                                             columnNumber: 25
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                    lineNumber: 885,
+                                                    lineNumber: 889,
                                                     columnNumber: 23
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1843,7 +1837,7 @@ async function LocalServicePage({ params }) {
                                                             children: "Ready To Start?"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                            lineNumber: 894,
+                                                            lineNumber: 898,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1851,7 +1845,7 @@ async function LocalServicePage({ params }) {
                                                             children: section.cta
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                            lineNumber: 895,
+                                                            lineNumber: 899,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -1863,41 +1857,41 @@ async function LocalServicePage({ params }) {
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                            lineNumber: 896,
+                                                            lineNumber: 900,
                                                             columnNumber: 25
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                    lineNumber: 893,
+                                                    lineNumber: 897,
                                                     columnNumber: 23
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                            lineNumber: 884,
+                                            lineNumber: 888,
                                             columnNumber: 21
                                         }, this)
                                     ]
                                 }, section.id, true, {
                                     fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                    lineNumber: 852,
+                                    lineNumber: 856,
                                     columnNumber: 19
                                 }, this)) : null
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                        lineNumber: 634,
+                        lineNumber: 636,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                    lineNumber: 633,
+                    lineNumber: 635,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                lineNumber: 632,
+                lineNumber: 634,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1915,7 +1909,7 @@ async function LocalServicePage({ params }) {
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                lineNumber: 911,
+                                lineNumber: 915,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1928,7 +1922,7 @@ async function LocalServicePage({ params }) {
                                                 children: faq.q
                                             }, void 0, false, {
                                                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                lineNumber: 915,
+                                                lineNumber: 919,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1936,34 +1930,34 @@ async function LocalServicePage({ params }) {
                                                 children: faq.a
                                             }, void 0, false, {
                                                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                                lineNumber: 916,
+                                                lineNumber: 920,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, faq.q, true, {
                                         fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                        lineNumber: 914,
+                                        lineNumber: 918,
                                         columnNumber: 17
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                                lineNumber: 912,
+                                lineNumber: 916,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                        lineNumber: 910,
+                        lineNumber: 914,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                    lineNumber: 909,
+                    lineNumber: 913,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/[state]/[city]/[service]/page.tsx",
-                lineNumber: 908,
+                lineNumber: 912,
                 columnNumber: 7
             }, this)
         ]

@@ -701,7 +701,7 @@ async function ServiceHubPage({ params, searchParams }) {
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                                     className: "text-base font-bold text-[#0d2d44]",
-                                                    children: "Typical Cost Driver: Scope"
+                                                    children: "Primary Driver: Scope"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/services/[service]/page.tsx",
                                                     lineNumber: 385,
@@ -709,7 +709,7 @@ async function ServiceHubPage({ params, searchParams }) {
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                     className: "mt-2 text-sm text-[#5c6875]",
-                                                    children: "Smaller isolated losses can begin around $1,200-$6,000, while broader flood restoration projects may range from $4,000-$30,000+ depending on material impact and contamination level."
+                                                    children: "Smaller isolated losses usually require less demolition and a shorter drying cycle than broad, multi-area flood events with heavy material impact."
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/services/[service]/page.tsx",
                                                     lineNumber: 386,
@@ -726,7 +726,7 @@ async function ServiceHubPage({ params, searchParams }) {
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                                     className: "text-base font-bold text-[#0d2d44]",
-                                                    children: "Typical Cost Driver: Area"
+                                                    children: "Primary Driver: Affected Area"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/services/[service]/page.tsx",
                                                     lineNumber: 392,
@@ -734,7 +734,7 @@ async function ServiceHubPage({ params, searchParams }) {
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                     className: "mt-2 text-sm text-[#5c6875]",
-                                                    children: "Basement and multi-room events often increase drying duration and demolition scope, commonly pushing project ranges into $2,000-$15,000+ or higher for severe incidents."
+                                                    children: "Basement and multi-room events often increase equipment runtime, material removal needs, and total project complexity."
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/services/[service]/page.tsx",
                                                     lineNumber: 393,
@@ -751,7 +751,7 @@ async function ServiceHubPage({ params, searchParams }) {
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                                     className: "text-base font-bold text-[#0d2d44]",
-                                                    children: "Typical Cost Driver: Urgency"
+                                                    children: "Primary Driver: Response Timing"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/services/[service]/page.tsx",
                                                     lineNumber: 399,
@@ -759,7 +759,7 @@ async function ServiceHubPage({ params, searchParams }) {
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                     className: "mt-2 text-sm text-[#5c6875]",
-                                                    children: "Delays increase moisture spread, microbial growth risk, and material loss. Early mitigation is usually the most cost-efficient decision in flood cleanup and restoration."
+                                                    children: "Delays increase moisture spread, microbial growth risk, and material loss. Early mitigation is usually the most efficient recovery decision in flood cleanup and restoration."
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/services/[service]/page.tsx",
                                                     lineNumber: 400,
