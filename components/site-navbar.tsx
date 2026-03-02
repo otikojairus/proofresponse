@@ -3,16 +3,15 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { SERVICES, SERVICE_ORDER } from "@/lib/restoration-data";
+import { EMERGENCY_PHONE_DISPLAY, SITE_NAME } from "@/lib/seo";
 
-const phoneDisplay = "(888) 480-7473";
-const phoneHref = "tel:8884807473";
+const phoneHref = `tel:${EMERGENCY_PHONE_DISPLAY.replace(/[^0-9]/g, "")}`;
 
 export function SiteNavbar() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   useEffect(() => {
     document.body.style.overflow = isDrawerOpen ? "hidden" : "";
-
     return () => {
       document.body.style.overflow = "";
     };
@@ -20,22 +19,20 @@ export function SiteNavbar() {
 
   return (
     <>
-      <header className="sticky top-0 z-40 border-b border-[#fbbf24]/30 bg-[#07131c]/95 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
-          <Link href="/" className="flex items-center gap-3" onClick={() => setIsDrawerOpen(false)}>
-            <div>
-              <p className="text-base font-extrabold tracking-wide text-[#fbbf24] sm:text-lg">RESTOXPERTRESTORATION</p>
-            </div>
+      <header className="fixed inset-x-0 top-0 z-50 border-b-2 border-[#ffd700]/30 bg-white/95 shadow-[0_8px_26px_rgba(13,45,68,0.1)] backdrop-blur-xl">
+        <div className="iris-container flex min-h-[82px] items-center gap-4 py-3">
+          <Link href="/" onClick={() => setIsDrawerOpen(false)} className="shrink-0">
+            <p className="text-sm font-black tracking-[0.12em] text-[#0d2d44] sm:text-base">{SITE_NAME}</p>
           </Link>
 
-          <nav className="hidden items-center gap-1 md:flex">
+          <nav className="hidden flex-1 items-center justify-center gap-1 lg:flex">
             {SERVICE_ORDER.map((serviceSlug) => {
               const service = SERVICES[serviceSlug];
               return (
                 <Link
                   key={service.slug}
                   href={`/services/${service.slug}`}
-                  className="rounded-md px-3 py-2 text-sm font-semibold text-slate-200 transition hover:bg-[#1e4a63]/30 hover:text-[#fbbf24]"
+                  className="rounded-lg border border-transparent px-3 py-2 text-xs font-semibold uppercase tracking-[0.08em] text-slate-700 transition hover:border-[#0d2d44]/12 hover:bg-[#0d2d44]/5 hover:text-[#0d2d44]"
                 >
                   {service.navLabel}
                 </Link>
@@ -43,13 +40,13 @@ export function SiteNavbar() {
             })}
           </nav>
 
-          <div className="hidden md:block">
-            <a
-              href={phoneHref}
-              className="rounded-md bg-[#fbbf24] px-4 py-2 text-sm font-semibold text-[#1e4a63] transition hover:brightness-105"
-            >
+          <div className="ml-auto hidden items-center gap-2 sm:flex">
+            <a href={phoneHref} className="iris-btn iris-btn-primary">
               Call 24/7
             </a>
+            <Link href="/services" className="iris-btn iris-btn-dark">
+              Service Hubs
+            </Link>
           </div>
 
           <button
@@ -57,22 +54,15 @@ export function SiteNavbar() {
             aria-expanded={isDrawerOpen}
             aria-label="Open navigation menu"
             onClick={() => setIsDrawerOpen((open) => !open)}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-md text-slate-100 md:hidden"
+            className="ml-auto inline-flex items-center justify-center p-1 text-2xl text-[#0d2d44] lg:hidden"
           >
-            <span className="sr-only">Menu</span>
-            <div className="flex w-5 flex-col gap-1.5">
-              <span className="h-0.5 w-full bg-current" />
-              <span className="h-0.5 w-full bg-current" />
-              <span className="h-0.5 w-full bg-current" />
-            </div>
+            <i className="fa-solid fa-bars" aria-hidden="true" />
           </button>
         </div>
       </header>
 
       <div
-        className={`fixed inset-0 z-50 md:hidden transition-[visibility] duration-300 ${
-          isDrawerOpen ? "visible" : "invisible"
-        }`}
+        className={`fixed inset-0 z-[60] lg:hidden transition-[visibility] duration-300 ${isDrawerOpen ? "visible" : "invisible"}`}
         role={isDrawerOpen ? "dialog" : undefined}
         aria-modal={isDrawerOpen}
         aria-hidden={!isDrawerOpen}
@@ -80,26 +70,26 @@ export function SiteNavbar() {
         <button
           type="button"
           aria-label="Close menu"
-          className={`absolute inset-0 bg-black/60 transition-opacity duration-300 ${
-            isDrawerOpen ? "opacity-100" : "opacity-0"
-          }`}
           onClick={() => setIsDrawerOpen(false)}
+          className={`absolute inset-0 bg-black/55 transition-opacity duration-300 ${isDrawerOpen ? "opacity-100" : "opacity-0"}`}
         />
         <div
-          className={`absolute right-0 top-0 h-full w-[82%] max-w-sm border-l border-[#1e4a63] bg-[#081824] p-6 transition-transform duration-300 ease-out ${
+          className={`absolute right-0 top-0 h-full w-[86%] max-w-sm overflow-y-auto border-l border-[#dbe2ea] bg-white p-6 transition-transform duration-300 ${
             isDrawerOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
           <div className="flex items-center justify-between">
-            <p className="text-xs uppercase tracking-[0.2em] text-[#fbbf24]">Services</p>
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#0d2d44]">Services</p>
             <button
               type="button"
+              aria-label="Close menu"
               onClick={() => setIsDrawerOpen(false)}
-              className="rounded-md px-2 py-1 text-sm text-slate-300"
+              className="inline-flex items-center justify-center p-1 text-xl text-slate-500"
             >
-              X
+              <i className="fa-solid fa-xmark" aria-hidden="true" />
             </button>
           </div>
+
           <nav className="mt-6 flex flex-col gap-2">
             {SERVICE_ORDER.map((serviceSlug) => {
               const service = SERVICES[serviceSlug];
@@ -108,34 +98,33 @@ export function SiteNavbar() {
                   key={service.slug}
                   href={`/services/${service.slug}`}
                   onClick={() => setIsDrawerOpen(false)}
-                  className="rounded-md border border-[#1e4a63] bg-[#0b1f2c] px-4 py-3 text-base font-semibold text-slate-100"
+                  className="rounded-xl border border-[#dbe2ea] bg-gradient-to-b from-[#f8fbff] to-white px-4 py-3 text-sm font-semibold text-[#102030]"
                 >
                   {service.name}
                 </Link>
               );
             })}
           </nav>
-          <a
-            href={phoneHref}
-            className="mt-6 block rounded-md bg-[#fbbf24] px-4 py-3 text-center text-base font-semibold text-[#1e4a63]"
-          >
-            Call {phoneDisplay}
-          </a>
+
+          <div className="mt-6 grid gap-2">
+            <a href={phoneHref} className="iris-btn iris-btn-primary">
+              Call {EMERGENCY_PHONE_DISPLAY}
+            </a>
+            <Link href="/services" onClick={() => setIsDrawerOpen(false)} className="iris-btn iris-btn-dark">
+              View Service Hubs
+            </Link>
+          </div>
         </div>
       </div>
 
-      <a
-        href={phoneHref}
-        className="fixed bottom-3 left-1/2 z-40 w-[calc(100%-1.5rem)] max-w-md -translate-x-1/2 rounded-xl bg-[#fbbf24] px-5 py-3 text-center text-sm font-extrabold tracking-wide text-[#1e4a63] shadow-xl shadow-black/40 md:hidden"
-      >
-        Call Now: {phoneDisplay}
-      </a>
-      <a
-        href={phoneHref}
-        className="fixed bottom-6 right-6 z-40 hidden rounded-xl bg-[#fbbf24] px-6 py-3 text-sm font-extrabold tracking-wide text-[#1e4a63] shadow-xl shadow-black/40 transition hover:brightness-105 md:inline-flex"
-      >
-        Call Now: {phoneDisplay}
-      </a>
+      <div className="fixed inset-x-3 bottom-3 z-40 grid grid-cols-2 gap-2 sm:hidden">
+        <a href={phoneHref} className="iris-btn iris-btn-primary shadow-lg">
+          Call Now
+        </a>
+        <Link href="/services" className="iris-btn iris-btn-dark shadow-lg">
+          Services
+        </Link>
+      </div>
     </>
   );
 }

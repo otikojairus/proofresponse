@@ -1,15 +1,31 @@
 @import "tailwindcss";
+@import "@fortawesome/fontawesome-free/css/all.min.css";
 
 :root {
-  --background: #07131c;
-  --foreground: #f8fafc;
-  --brand-primary: #1e4a63;
-  --brand-accent: #fbbf24;
+  --primary: #0d2d44;
+  --primary-light: #1e4a63;
+  --primary-dark: #05141f;
+  --secondary: #ffd700;
+  --secondary-dark: #daa520;
+  --accent: #0d2d44;
+  --surface: #ffffff;
+  --surface-muted: #f8f9fa;
+  --ink: #1a1a1a;
+  --ink-soft: #666666;
+  --white: #ffffff;
+  --border: #e1e5eb;
+  --shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.15);
+  --transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+  --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  --gradient-secondary: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
+  --header-height: 86px;
+  --mobile-bottom-offset: 5.8rem;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-background: var(--surface);
+  --color-foreground: var(--ink);
   --font-sans: var(--font-jost);
 }
 
@@ -25,21 +41,399 @@ body {
 
 html {
   font-size: 17px;
+  scroll-behavior: smooth;
 }
 
 body {
   min-height: 100vh;
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--surface);
+  color: var(--ink);
   font-family: var(--font-jost), sans-serif;
+  line-height: 1.6;
+  padding-top: var(--header-height);
 }
 
 @media (max-width: 767px) {
   body {
-    padding-bottom: 5.5rem;
+    padding-bottom: var(--mobile-bottom-offset);
   }
 }
 
 a {
   text-decoration: none;
+  color: inherit;
+}
+
+.iris-shell {
+  min-height: calc(100vh - var(--header-height));
+  background: var(--surface);
+}
+
+.iris-container {
+  width: min(1400px, 100% - 2.5rem);
+  margin: 0 auto;
+}
+
+.iris-section {
+  padding: 80px 0;
+  position: relative;
+}
+
+.iris-block {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+}
+
+.iris-band {
+  background: var(--white);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.iris-band-soft {
+  background: #f4f7fa;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.iris-section-muted {
+  background: var(--surface-muted);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.iris-hero {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgba(13, 45, 68, 0.93) 0%, rgba(30, 74, 99, 0.9) 50%, rgba(5, 20, 31, 0.95) 100%);
+  color: var(--white);
+  margin-top: calc(-1 * var(--header-height));
+  padding-top: calc(var(--header-height) + 20px);
+}
+
+.iris-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(0, 180, 216, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.iris-hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 96px;
+  background: linear-gradient(to top, var(--white) 0%, transparent 100%);
+}
+
+.iris-hero .iris-container {
+  position: relative;
+  z-index: 2;
+}
+
+.iris-hero-kicker {
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #ffe8aa;
+}
+
+.iris-hero-title {
+  margin-top: 0.7rem;
+  font-size: clamp(2rem, 4.7vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--white);
+}
+
+.iris-hero-title span {
+  display: block;
+  background: linear-gradient(to right, #ffffff 0%, #ffd700 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.iris-hero-lead {
+  margin-top: 1rem;
+  max-width: 48rem;
+  color: #e8eff5;
+  font-size: 1.05rem;
+}
+
+.iris-actions {
+  margin-top: 1.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.iris-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 0.8rem 1.2rem;
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  transition: var(--transition);
+}
+
+.iris-btn:hover {
+  transform: translateY(-2px);
+}
+
+.iris-btn-primary {
+  background: var(--gradient-secondary);
+  color: #1a2a3a;
+  box-shadow: 0 8px 22px rgba(255, 215, 0, 0.35);
+}
+
+.iris-btn-secondary {
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.iris-btn-dark {
+  background: var(--gradient-primary);
+  color: var(--white);
+}
+
+.iris-chip {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(255, 215, 0, 0.45);
+  background: rgba(255, 215, 0, 0.12);
+  color: #ffe28c;
+  border-radius: 999px;
+  padding: 0.34rem 0.7rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+.iris-title {
+  margin: 0;
+  color: var(--primary);
+  font-size: clamp(1.7rem, 3vw, 2.6rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+.iris-subtitle {
+  margin-top: 0.65rem;
+  color: var(--ink-soft);
+}
+
+.iris-card {
+  background: var(--white);
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.iris-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+
+.iris-card-pad {
+  padding: 1.5rem;
+}
+
+.iris-panel {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1rem;
+}
+
+.iris-divider {
+  width: 100%;
+  height: 1px;
+  background: var(--border);
+  margin: 1.75rem 0;
+}
+
+.iris-section-head {
+  text-align: center;
+  margin: 0 auto 2.25rem;
+  max-width: 860px;
+}
+
+.iris-section-head h2 {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 0.85rem;
+}
+
+.iris-section-head h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10px;
+  width: 62px;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--secondary);
+}
+
+.iris-section-head p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 1.08rem;
+}
+
+.iris-factors-list {
+  max-width: 840px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1.1rem;
+}
+
+.iris-factor-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  align-items: start;
+  background: #ffffff;
+  border: 1px solid #dbe2ea;
+  border-radius: 14px;
+  padding: 1.05rem 1.2rem;
+  box-shadow: 0 10px 24px rgba(13, 45, 68, 0.08);
+  transition: var(--transition);
+}
+
+.iris-factor-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 30px rgba(13, 45, 68, 0.14);
+}
+
+.iris-factor-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: #ffd700;
+  color: #0d2d44;
+  font-size: 1.05rem;
+  line-height: 1;
+  margin-top: 0.15rem;
+}
+
+.iris-factor-title {
+  margin: 0;
+  color: #263645;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.iris-factor-body {
+  margin: 0.3rem 0 0;
+  color: var(--ink-soft);
+}
+
+.iris-final-cta {
+  background: linear-gradient(110deg, #08253b 0%, #0d2d44 52%, #103f33 100%);
+  color: #e9f2f8;
+  border-top: 1px solid rgba(255, 215, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.iris-final-cta .iris-title {
+  color: #ffffff;
+}
+
+.iris-link {
+  color: var(--primary);
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.iris-link:hover {
+  color: var(--accent);
+}
+
+.iris-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.iris-list > li {
+  list-style: none;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.8rem 0.95rem;
+}
+
+.iris-list > li::before {
+  content: "✓";
+  color: var(--accent);
+  font-weight: 700;
+  margin-right: 8px;
+}
+
+.iris-footer {
+  position: relative;
+  background: var(--primary-dark);
+  color: #d4e1ec;
+  margin-top: 4rem;
+}
+
+.iris-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, var(--secondary) 50%, transparent 100%);
+}
+
+.iris-footer-title {
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.iris-footer-link {
+  color: #d4e1ec;
+}
+
+.iris-footer-link:hover {
+  color: var(--secondary);
+}
+
+@media (max-width: 1024px) {
+  .iris-section {
+    padding: 68px 0;
+  }
+
+  .iris-container {
+    width: min(1400px, 100% - 1.6rem);
+  }
 }

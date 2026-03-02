@@ -1,40 +1,76 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { JsonLd } from "@/components/json-ld";
-import { SERVICES, SERVICE_ORDER } from "@/lib/restoration-data";
+import { LOCATION_PAGES, SERVICES, SERVICE_ORDER } from "@/lib/restoration-data";
 import { EMERGENCY_PHONE_DISPLAY, SITE_NAME, absoluteUrl } from "@/lib/seo";
 
+const HUMAN_SUPPORT_STEPS = [
+  {
+    icon: "fa-phone-volume",
+    title: "Talk To A Real Person",
+    body: "You get a live response team member who helps you slow things down and prioritize what matters first.",
+  },
+  {
+    icon: "fa-triangle-exclamation",
+    title: "Safety-First Guidance",
+    body: "Before anything else, we walk through immediate safety concerns like active water, electricity, or contamination.",
+  },
+  {
+    icon: "fa-truck-fast",
+    title: "Rapid Dispatch",
+    body: "A field team is routed fast so stabilization can begin before damage spreads further.",
+  },
+  {
+    icon: "fa-clipboard-check",
+    title: "Clear Next Steps",
+    body: "You get a practical plan, documentation support, and ongoing updates until recovery is under control.",
+  },
+] as const;
+
+const WHAT_PEOPLE_NEED = [
+  "Someone to answer immediately and take control of the situation",
+  "A clear explanation of what happens in the next few hours",
+  "Confidence that damage is being contained quickly and properly",
+  "Documentation that supports insurance and property decisions",
+] as const;
+
 export const metadata: Metadata = {
-  title: "Emergency Restoration Service Hubs",
+  title: "24/7 Emergency Restoration Services",
   description:
-    "Browse service hubs for emergency water damage restoration, fire damage restoration, mold remediation, and hazmat cleanup across Canadian cities.",
+    "Get fast, human-centered emergency support for water, fire, mold, and hazmat incidents across the U.S. and Canada. Speak with a live team and find the right restoration service path now.",
   alternates: {
     canonical: "/services",
   },
   openGraph: {
-    title: `${SITE_NAME} Service Hubs`,
+    title: `${SITE_NAME} Emergency Restoration Services`,
     description:
-      "Structured service pages with definitions, process steps, local internal links, and direct emergency call actions.",
+      "Real emergency support across Canada and the U.S. for property owners and managers, with clear service pathways and 24/7 live dispatch.",
     type: "website",
     url: absoluteUrl("/services"),
     siteName: SITE_NAME,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE_NAME} Service Hubs`,
-    description: "Open a service hub, pick a city page, and call for emergency dispatch.",
+    title: `${SITE_NAME} Emergency Restoration Services`,
+    description: "Choose the service you need and connect with 24/7 live emergency support.",
   },
   keywords: [
-    "emergency restoration services canada",
+    "emergency restoration services",
+    "24/7 restoration response",
+    "water fire mold hazmat services",
     ...SERVICE_ORDER.map((serviceSlug) => SERVICES[serviceSlug].name.toLowerCase()),
   ],
 };
 
 export default function ServicesPage() {
+  const totalLocations = LOCATION_PAGES.length;
+  const canadaLocationCount = LOCATION_PAGES.filter((location) => location.countryName === "Canada").length;
+  const usLocationCount = LOCATION_PAGES.filter((location) => location.countryName === "United States").length;
+
   const listSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Restoration Service Hubs",
+    name: "Emergency Restoration Services",
     itemListElement: SERVICE_ORDER.map((serviceSlug, index) => {
       const service = SERVICES[serviceSlug];
       return {
@@ -47,49 +83,175 @@ export default function ServicesPage() {
   };
 
   return (
-    <main className="min-h-screen bg-[#07131c] px-6 py-16 text-slate-100">
+    <main className="iris-shell">
       <JsonLd data={listSchema} />
-      <div className="mx-auto max-w-6xl">
-        <div className="mb-10">
-          <Link href="/" className="text-sm font-semibold text-[#fbbf24] hover:brightness-110">
-            ← Back to Home
-          </Link>
-          <h1 className="mt-4 text-4xl font-black">{SITE_NAME} Canadian Service Hubs</h1>
-          <p className="mt-3 max-w-3xl text-slate-300">
-            Pick a service, select your location page, and call {EMERGENCY_PHONE_DISPLAY} for immediate help.
+
+      <section className="iris-hero iris-section py-14">
+        <div className="iris-container">
+          <h1 className="iris-hero-title mt-5">
+            Emergency Help, Without The Guesswork
+            <span>Choose The Right Service Path</span>
+          </h1>
+          <p className="iris-hero-lead max-w-3xl">
+            Property emergencies are stressful. This page is built to help you quickly choose the right response path,
+            understand what happens next, and reach live support at {EMERGENCY_PHONE_DISPLAY} across Canada and the
+            United States.
           </p>
+          <p className="mt-4 max-w-3xl text-sm text-[#d6e6f0]">
+            Inside this page you can review service pathways, first-response priorities, and post-call expectations so
+            you can make a confident decision fast.
+          </p>
+          <div className="iris-actions">
+            <a href={`tel:${EMERGENCY_PHONE_DISPLAY.replace(/[^0-9]/g, "")}`} className="iris-btn iris-btn-primary">
+              Call {EMERGENCY_PHONE_DISPLAY}
+            </a>
+            <Link href="/services/water-damage" className="iris-btn iris-btn-secondary">
+              Start With Water Damage
+            </Link>
+          </div>
         </div>
+      </section>
 
-        <section className="mb-8 rounded-2xl border border-[#1e4a63] bg-[#0b1f2c] p-6">
-          <h2 className="text-2xl font-bold text-white">Quick Answer</h2>
-          <p className="mt-3 text-slate-300">
-            <strong>Best page structure for emergency intent:</strong> service hub first, then city page with a clear call
-            action. Each route in this site supports extractable definitions, process steps, and FAQs.
-          </p>
-        </section>
+      <section className="iris-section pt-10">
+        <div className="iris-container space-y-8">
+          <div className="iris-band rounded-2xl px-6 py-8">
+            <div className="iris-section-head">
+              <h2 className="iris-title text-2xl">Coverage Across Canada And The U.S.</h2>
+              <p>
+                We support all listed service routes in both countries, with structured local pages designed for fast
+                action in urgent situations.
+              </p>
+            </div>
+            <div className="mt-5 grid gap-4 md:grid-cols-3">
+              <div className="iris-panel">
+                <h3 className="text-base font-bold text-[#0d2d44]">Total Locations</h3>
+                <p className="mt-2 text-sm text-[#5c6875]">
+                  {totalLocations} city-level service routes currently available through this site.
+                </p>
+              </div>
+              <div className="iris-panel">
+                <h3 className="text-base font-bold text-[#0d2d44]">Canada</h3>
+                <p className="mt-2 text-sm text-[#5c6875]">
+                  {canadaLocationCount} locations supported across provinces and local service pages.
+                </p>
+              </div>
+              <div className="iris-panel">
+                <h3 className="text-base font-bold text-[#0d2d44]">United States</h3>
+                <p className="mt-2 text-sm text-[#5c6875]">
+                  {usLocationCount} locations supported across states and local service pages.
+                </p>
+              </div>
+            </div>
+          </div>
 
-        <div className="grid gap-6 md:grid-cols-2">
-          {SERVICE_ORDER.map((serviceSlug, idx) => {
-            const service = SERVICES[serviceSlug];
-            const tones = ["from-[#1e4a63]/35", "from-[#fbbf24]/35", "from-[#1e4a63]/25", "from-[#fbbf24]/25"];
-            return (
-              <Link
-                key={service.slug}
-                href={`/services/${service.slug}`}
-                className="relative overflow-hidden rounded-2xl border border-[#1e4a63] bg-[#0b1f2c] p-6 transition hover:-translate-y-1 hover:border-[#fbbf24]"
-              >
-                <div className={`absolute -right-8 -top-8 h-28 w-28 rounded-full bg-gradient-to-br ${tones[idx]} to-transparent blur-xl`} />
-                <p className="relative text-xs uppercase tracking-[0.2em] text-[#fbbf24]">{service.navLabel}</p>
-                <h2 className="relative mt-2 text-2xl font-bold text-white">{service.name}</h2>
-                <p className="relative mt-3 text-slate-300">{service.shortDescription}</p>
-                <span className="relative mt-5 inline-flex rounded-md bg-[#fbbf24] px-4 py-2 text-sm font-semibold text-[#1e4a63] hover:brightness-105">
-                  Open {service.name} Hub
-                </span>
+          <div className="iris-band-soft rounded-2xl px-6 py-8">
+            <div className="iris-section-head">
+              <h2 className="iris-title text-2xl">What This Site Offers</h2>
+              <p>Each page is built to help users move from uncertainty to action with clear, practical guidance.</p>
+            </div>
+            <div className="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+              <div className="iris-panel">
+                <h3 className="text-base font-bold text-[#0d2d44]">Service Guidance</h3>
+                <p className="mt-2 text-sm text-[#5c6875]">
+                  Clear explanations of water, fire, mold, and hazmat response paths.
+                </p>
+              </div>
+              <div className="iris-panel">
+                <h3 className="text-base font-bold text-[#0d2d44]">Location Navigation</h3>
+                <p className="mt-2 text-sm text-[#5c6875]">
+                  Fast links to city-specific pages across Canada and the United States.
+                </p>
+              </div>
+              <div className="iris-panel">
+                <h3 className="text-base font-bold text-[#0d2d44]">Emergency Steps</h3>
+                <p className="mt-2 text-sm text-[#5c6875]">
+                  Action-oriented first-response guidance to reduce avoidable secondary damage.
+                </p>
+              </div>
+              <div className="iris-panel">
+                <h3 className="text-base font-bold text-[#0d2d44]">Direct Support</h3>
+                <p className="mt-2 text-sm text-[#5c6875]">
+                  A direct 24/7 call path for live intake and immediate dispatch coordination.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="iris-block">
+            <h2 className="iris-title text-2xl">What Most People Need In The First 10 Minutes</h2>
+            <p className="iris-subtitle">
+              During an active property incident, the priority is not technical jargon. It is clear direction, real
+              support, and immediate action.
+            </p>
+          </div>
+          <div className="iris-divider" />
+
+          <div className="iris-band-soft rounded-2xl px-6 py-8">
+            <ul className="grid gap-3 md:grid-cols-2">
+              {WHAT_PEOPLE_NEED.map((item) => (
+                <li key={item} className="iris-panel text-sm text-[#425264]">
+                  <span className="font-semibold text-[#0d2d44]">•</span> {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="iris-section-head">
+            <h2 className="iris-title text-2xl">Choose Your Service Path</h2>
+            <p>Select the incident type that best matches what you are dealing with right now.</p>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2">
+            {SERVICE_ORDER.map((serviceSlug) => {
+              const service = SERVICES[serviceSlug];
+              return (
+                <Link key={service.slug} href={`/services/${service.slug}`} className="iris-card iris-card-pad">
+                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#ffd700] text-[#0d2d44] text-lg">
+                    <i className="fa-solid fa-route" aria-hidden="true" />
+                  </div>
+                  <p className="mt-3 text-xs font-bold uppercase tracking-[0.2em] text-[#1e4a63]">{service.navLabel}</p>
+                  <h3 className="mt-2 text-2xl font-bold text-[#0d2d44]">{service.name}</h3>
+                  <p className="mt-3 text-[#5c6875]">{service.shortDescription}</p>
+                  <span className="iris-btn iris-btn-dark mt-5">Open {service.name}</span>
+                </Link>
+              );
+            })}
+          </div>
+
+          <div className="iris-band rounded-2xl px-6 py-8">
+            <div className="iris-section-head">
+              <h2 className="iris-title text-2xl">What Happens After You Call</h2>
+              <p>The process is designed to reduce stress and create clarity from the start.</p>
+            </div>
+            <div className="mt-5 grid gap-4 md:grid-cols-2">
+              {HUMAN_SUPPORT_STEPS.map((step) => (
+                <div key={step.title} className="iris-panel">
+                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#ffd700] text-[#0d2d44] text-lg">
+                    <i className={`fa-solid ${step.icon}`} aria-hidden="true" />
+                  </div>
+                  <h3 className="mt-3 text-lg font-bold text-[#0d2d44]">{step.title}</h3>
+                  <p className="mt-2 text-sm text-[#5c6875]">{step.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="iris-band-soft rounded-2xl px-6 py-8">
+            <h2 className="iris-title text-2xl">If You Are Unsure Which Service To Pick</h2>
+            <p className="iris-subtitle">
+              That is normal. Just call and describe what happened. We will route you to the right response path and
+              make sure the first actions are focused on safety, stabilization, and practical recovery.
+            </p>
+            <div className="iris-actions">
+              <a href={`tel:${EMERGENCY_PHONE_DISPLAY.replace(/[^0-9]/g, "")}`} className="iris-btn iris-btn-primary">
+                Speak To Emergency Support
+              </a>
+              <Link href="/" className="iris-btn iris-btn-dark">
+                Return Home
               </Link>
-            );
-          })}
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
     </main>
   );
 }

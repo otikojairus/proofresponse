@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Jost } from "next/font/google";
 import "./globals.css";
 import { SiteNavbar } from "@/components/site-navbar";
+import { SiteFooter } from "@/components/site-footer";
 import {
   EMERGENCY_PHONE_DISPLAY,
   SITE_NAME,
@@ -77,6 +78,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </noscript>
         <SiteNavbar />
         {children}
+        <SiteFooter />
         <a className="sr-only" href={`tel:${EMERGENCY_PHONE_DISPLAY.replace(/[^0-9]/g, "")}`}>
           Call {EMERGENCY_PHONE_DISPLAY}
         </a>

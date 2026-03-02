@@ -83,7 +83,7 @@ __turbopack_context__.s([
     ()=>serviceLocationKeyword
 ]);
 const SITE_NAME = "RestoXpert Restoration";
-const DEFAULT_SITE_URL = "http://localhost:3000";
+const DEFAULT_SITE_URL = "https://restoxpertrestoration.com";
 const EMERGENCY_PHONE_DISPLAY = "(888) 480-7473";
 const EMERGENCY_PHONE_E164 = "+18884807473";
 function getSiteUrl() {
@@ -147,34 +147,74 @@ const metadata = {
 function RootLayout({ children }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("html", {
         lang: "en",
-        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("body", {
-            className: `${__TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$jost_7bd03f2e$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"].variable} antialiased`,
-            children: [
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$site$2d$navbar$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["SiteNavbar"], {}, void 0, false, {
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("head", {
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("script", {
+                    dangerouslySetInnerHTML: {
+                        __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W9M6SLS7');`
+                    }
+                }, void 0, false, {
                     fileName: "[project]/app/layout.tsx",
                     lineNumber: 59,
                     columnNumber: 9
-                }, this),
-                children,
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                    className: "sr-only",
-                    href: `tel:${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$seo$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["EMERGENCY_PHONE_DISPLAY"].replace(/[^0-9]/g, "")}`,
-                    children: [
-                        "Call ",
-                        __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$seo$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["EMERGENCY_PHONE_DISPLAY"]
-                    ]
-                }, void 0, true, {
-                    fileName: "[project]/app/layout.tsx",
-                    lineNumber: 61,
-                    columnNumber: 9
                 }, this)
-            ]
-        }, void 0, true, {
-            fileName: "[project]/app/layout.tsx",
-            lineNumber: 58,
-            columnNumber: 7
-        }, this)
-    }, void 0, false, {
+            }, void 0, false, {
+                fileName: "[project]/app/layout.tsx",
+                lineNumber: 58,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("body", {
+                className: `${__TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$jost_7bd03f2e$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"].variable} antialiased`,
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("noscript", {
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("iframe", {
+                            src: "https://www.googletagmanager.com/ns.html?id=GTM-W9M6SLS7",
+                            height: "0",
+                            width: "0",
+                            style: {
+                                display: "none",
+                                visibility: "hidden"
+                            }
+                        }, void 0, false, {
+                            fileName: "[project]/app/layout.tsx",
+                            lineNumber: 71,
+                            columnNumber: 11
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/app/layout.tsx",
+                        lineNumber: 70,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$site$2d$navbar$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["SiteNavbar"], {}, void 0, false, {
+                        fileName: "[project]/app/layout.tsx",
+                        lineNumber: 78,
+                        columnNumber: 9
+                    }, this),
+                    children,
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                        className: "sr-only",
+                        href: `tel:${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$seo$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["EMERGENCY_PHONE_DISPLAY"].replace(/[^0-9]/g, "")}`,
+                        children: [
+                            "Call ",
+                            __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$seo$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["EMERGENCY_PHONE_DISPLAY"]
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/app/layout.tsx",
+                        lineNumber: 80,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/app/layout.tsx",
+                lineNumber: 69,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
         fileName: "[project]/app/layout.tsx",
         lineNumber: 57,
         columnNumber: 5
