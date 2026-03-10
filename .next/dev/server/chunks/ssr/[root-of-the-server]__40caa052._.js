@@ -25925,7 +25925,26 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$location$2d$data$2e$t
 var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$services$2d$data$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/lib/services-data.ts [app-rsc] (ecmascript)");
 ;
 ;
-const REGION_CITY_ROWS = __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$location$2d$data$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["RAW_LOCATION_ROWS"];
+const ACTIVE_LOCATION_LIMIT = 50;
+const REGION_CITY_ROWS = (()=>{
+    let remaining = ACTIVE_LOCATION_LIMIT;
+    // Full dataset stays in `RAW_LOCATION_ROWS` for later expansion.
+    // Re-enable everything by replacing this block with:
+    // return RAW_LOCATION_ROWS;
+    return __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$location$2d$data$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["RAW_LOCATION_ROWS"].flatMap((row)=>{
+        if (remaining <= 0) {
+            return [];
+        }
+        const activeCities = row.cities.slice(0, remaining);
+        remaining -= activeCities.length;
+        return activeCities.length > 0 ? [
+            {
+                ...row,
+                cities: activeCities
+            }
+        ] : [];
+    });
+})();
 function slugifyLocationSegment(value) {
     return value.normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
 }
