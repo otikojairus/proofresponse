@@ -16,16 +16,16 @@ const HOMEPAGE_STATE_LIMIT = 12;
 const HOMEPAGE_CITIES_PER_STATE = 12;
 
 export const metadata: Metadata = {
-  title: "24/7 Emergency Restoration Support Across Canada And The U.S.",
+  title: "24/7 Emergency Restoration Support Across Canada",
   description:
-    "Get immediate help for water, fire, mold, and hazmat incidents across Canada and the U.S. Speak with a live team, understand next steps, and start recovery quickly.",
+    "Get immediate help for water, fire, mold, and hazmat incidents across Canada. Speak with a live team, understand next steps, and start recovery quickly.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: `${SITE_NAME} | 24/7 Emergency Restoration Support`,
     description:
-      "Human-centered emergency response across Canada and the U.S. for property owners and managers, with fast dispatch and clear next steps.",
+      "Human-centered emergency response across Canada for property owners and managers, with fast dispatch and clear next steps.",
     url: absoluteUrl("/"),
     type: "website",
     siteName: SITE_NAME,
@@ -37,7 +37,6 @@ export const metadata: Metadata = {
   },
   keywords: [
     "emergency restoration canada",
-    "emergency restoration usa",
     ...featuredLocations.map((location) => serviceLocationKeyword(primaryService.name, location.cityName)),
   ],
 };
@@ -45,7 +44,6 @@ export const metadata: Metadata = {
 export default function Home() {
   const states = getStates().slice(0, HOMEPAGE_STATE_LIMIT);
   const canadaLocationCount = LOCATION_PAGES.filter((location) => location.countryName === "Canada").length;
-  const usLocationCount = LOCATION_PAGES.filter((location) => location.countryName === "United States").length;
   const totalLocationCount = LOCATION_PAGES.length;
   const stateToCities = new Map<string, (typeof LOCATION_PAGES)[number][]>();
   for (const location of LOCATION_PAGES) {
@@ -67,7 +65,7 @@ export default function Home() {
             "@type": "ContactPoint",
             telephone: EMERGENCY_PHONE_E164,
             contactType: "emergency customer service",
-            areaServed: ["CA", "US"],
+            areaServed: ["CA"],
             availableLanguage: ["en"],
           },
         ],
@@ -113,7 +111,7 @@ export default function Home() {
               <p className="iris-hero-kicker">Emergency Restoration Support</p>
               <h1 className="iris-hero-title">
                 Real Help In High-Stress Moments
-                <span>Clear Service Paths Across Canada And The U.S.</span>
+                <span>Clear Service Paths Across Canada</span>
               </h1>
               <p className="iris-hero-lead">
                 When damage happens, the first priority is safety and rapid stabilization. Call {EMERGENCY_PHONE_DISPLAY}{" "}
@@ -121,7 +119,7 @@ export default function Home() {
               </p>
               <p className="mt-4 max-w-3xl text-sm text-[#d6e6f0]">
                 This page helps you choose the right service, understand what happens after your call, and move to a
-                location page when you are ready for local dispatch across both countries.
+                location page when you are ready for local dispatch in Canada.
               </p>
               <div className="iris-actions">
                 <div className="hidden sm:block">
@@ -182,13 +180,10 @@ export default function Home() {
           <div className="iris-container">
             <div className="iris-band rounded-2xl px-6 py-8">
               <div className="iris-section-head">
-                <h2 className="iris-title text-2xl">Complete Location Coverage In Both Countries</h2>
-                <p>
-                  This site supports all listed locations in Canada and the United States, with direct routing into
-                  city-level emergency pages.
-                </p>
+                <h2 className="iris-title text-2xl">Canadian Location Coverage</h2>
+                <p>This site currently supports listed Canadian locations only, with direct routing into local emergency pages.</p>
               </div>
-              <div className="mt-5 grid gap-4 md:grid-cols-3">
+              <div className="mt-5 grid gap-4 md:grid-cols-2">
                 <div className="iris-panel">
                   <h3 className="text-base font-bold text-[#0d2d44]">Total Locations</h3>
                   <p className="mt-2 text-sm text-[#5c6875]">{totalLocationCount} serviceable local routes.</p>
@@ -196,10 +191,6 @@ export default function Home() {
                 <div className="iris-panel">
                   <h3 className="text-base font-bold text-[#0d2d44]">Canada</h3>
                   <p className="mt-2 text-sm text-[#5c6875]">{canadaLocationCount} locations in Canadian provinces.</p>
-                </div>
-                <div className="iris-panel">
-                  <h3 className="text-base font-bold text-[#0d2d44]">United States</h3>
-                  <p className="mt-2 text-sm text-[#5c6875]">{usLocationCount} locations in U.S. states.</p>
                 </div>
               </div>
             </div>
@@ -320,7 +311,7 @@ export default function Home() {
                 </div>
                 <div className="iris-panel">
                   <h3 className="text-base font-bold text-[#0d2d44]">Local Routing</h3>
-                  <p className="mt-2 text-sm text-[#5c6875]">Fast access to city-specific pages in Canada and the U.S.</p>
+                  <p className="mt-2 text-sm text-[#5c6875]">Fast access to city-specific pages across Canadian locations.</p>
                 </div>
                 <div className="iris-panel">
                   <h3 className="text-base font-bold text-[#0d2d44]">Decision Support</h3>
@@ -337,7 +328,7 @@ export default function Home() {
 
         <section className="iris-section iris-section-muted">
           <div className="iris-container">
-            <h2 className="iris-title">Find Help By Province Or State</h2>
+            <h2 className="iris-title">Find Help By Province</h2>
             <p className="iris-subtitle">Browse local routes and open city-specific emergency pages quickly.</p>
             <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
               {states.map((state) => {
@@ -359,7 +350,7 @@ export default function Home() {
               })}
             </div>
             <p className="mt-6 text-sm text-[#5c6875]">
-              Showing {HOMEPAGE_STATE_LIMIT} provinces/states and up to {HOMEPAGE_CITIES_PER_STATE} cities each.
+              Showing {HOMEPAGE_STATE_LIMIT} provinces and up to {HOMEPAGE_CITIES_PER_STATE} cities each.
             </p>
           </div>
         </section>

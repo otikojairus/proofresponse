@@ -11,15 +11,13 @@ export type LocationContent = {
   cityHosts: string[];
 };
 
-const ACTIVE_LOCATION_LIMIT = 50;
+const ACTIVE_LOCATION_LIMIT = 250;
 
 const REGION_CITY_ROWS = (() => {
   let remaining = ACTIVE_LOCATION_LIMIT;
 
-  // Full dataset stays in `RAW_LOCATION_ROWS` for later expansion.
-  // Re-enable everything by replacing this block with:
-  // return RAW_LOCATION_ROWS;
-  return RAW_LOCATION_ROWS.flatMap((row) => {
+  // Limit active pages to Canadian locations for now.
+  return RAW_LOCATION_ROWS.filter((row) => row.countryName === "Canada").flatMap((row) => {
     if (remaining <= 0) {
       return [];
     }

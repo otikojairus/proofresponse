@@ -37,14 +37,14 @@ const WHAT_PEOPLE_NEED = [
 export const metadata: Metadata = {
   title: "24/7 Emergency Restoration Services",
   description:
-    "Get fast, human-centered emergency support for water, fire, mold, and hazmat incidents across the U.S. and Canada. Speak with a live team and find the right restoration service path now.",
+    "Get fast, human-centered emergency support for water, fire, mold, and hazmat incidents across Canada. Speak with a live team and find the right restoration service path now.",
   alternates: {
     canonical: "/services",
   },
   openGraph: {
     title: `${SITE_NAME} Emergency Restoration Services`,
     description:
-      "Real emergency support across Canada and the U.S. for property owners and managers, with clear service pathways and 24/7 live dispatch.",
+      "Real emergency support across Canada for property owners and managers, with clear service pathways and 24/7 live dispatch.",
     type: "website",
     url: absoluteUrl("/services"),
     siteName: SITE_NAME,
@@ -65,8 +65,6 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   const totalLocations = LOCATION_PAGES.length;
   const canadaLocationCount = LOCATION_PAGES.filter((location) => location.countryName === "Canada").length;
-  const usLocationCount = LOCATION_PAGES.filter((location) => location.countryName === "United States").length;
-
   const listSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -94,8 +92,7 @@ export default function ServicesPage() {
           </h1>
           <p className="iris-hero-lead max-w-3xl">
             Property emergencies are stressful. This page is built to help you quickly choose the right response path,
-            understand what happens next, and reach live support at {EMERGENCY_PHONE_DISPLAY} across Canada and the
-            United States.
+            understand what happens next, and reach live support at {EMERGENCY_PHONE_DISPLAY} across Canada.
           </p>
           <p className="mt-4 max-w-3xl text-sm text-[#d6e6f0]">
             Inside this page you can review service pathways, first-response priorities, and post-call expectations so
@@ -118,13 +115,10 @@ export default function ServicesPage() {
         <div className="iris-container space-y-8">
           <div className="iris-band rounded-2xl px-6 py-8">
             <div className="iris-section-head">
-              <h2 className="iris-title text-2xl">Coverage Across Canada And The U.S.</h2>
-              <p>
-                We support all listed service routes in both countries, with structured local pages designed for fast
-                action in urgent situations.
-              </p>
+              <h2 className="iris-title text-2xl">Coverage Across Canada</h2>
+              <p>We support listed Canadian service routes, with structured local pages designed for fast action in urgent situations.</p>
             </div>
-            <div className="mt-5 grid gap-4 md:grid-cols-3">
+            <div className="mt-5 grid gap-4 md:grid-cols-2">
               <div className="iris-panel">
                 <h3 className="text-base font-bold text-[#0d2d44]">Total Locations</h3>
                 <p className="mt-2 text-sm text-[#5c6875]">
@@ -135,12 +129,6 @@ export default function ServicesPage() {
                 <h3 className="text-base font-bold text-[#0d2d44]">Canada</h3>
                 <p className="mt-2 text-sm text-[#5c6875]">
                   {canadaLocationCount} locations supported across provinces and local service pages.
-                </p>
-              </div>
-              <div className="iris-panel">
-                <h3 className="text-base font-bold text-[#0d2d44]">United States</h3>
-                <p className="mt-2 text-sm text-[#5c6875]">
-                  {usLocationCount} locations supported across states and local service pages.
                 </p>
               </div>
             </div>
@@ -161,7 +149,7 @@ export default function ServicesPage() {
               <div className="iris-panel">
                 <h3 className="text-base font-bold text-[#0d2d44]">Location Navigation</h3>
                 <p className="mt-2 text-sm text-[#5c6875]">
-                  Fast links to city-specific pages across Canada and the United States.
+                  Fast links to city-specific pages across Canadian locations.
                 </p>
               </div>
               <div className="iris-panel">
