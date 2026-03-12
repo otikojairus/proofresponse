@@ -25692,7 +25692,7 @@ const SERVICES = {
         name: "Water Damage Restoration",
         navLabel: "Water",
         shortDescription: "24/7 extraction, drying, dehumidification, and structural recovery for flooding and burst pipes.",
-        emergencyLine: "(888) 480-7473",
+        emergencyLine: "+1 855-318-3325",
         heroPrimary: "Emergency Flood Cleanup",
         heroSecondary: "Fast water extraction and structural drying to reduce damage and downtime.",
         processSteps: [
@@ -25738,7 +25738,7 @@ const SERVICES = {
         name: "Fire Damage Restoration",
         navLabel: "Fire",
         shortDescription: "Emergency board-up, soot cleanup, smoke odor control, and rebuild planning after structural fire events.",
-        emergencyLine: "(888) 480-7473",
+        emergencyLine: "+1 855-318-3325",
         heroPrimary: "Fire & Smoke Recovery",
         heroSecondary: "Stabilize the property quickly and start smoke, soot, and odor remediation without delay.",
         processSteps: [
@@ -25784,7 +25784,7 @@ const SERVICES = {
         name: "Mold Remediation",
         navLabel: "Mold",
         shortDescription: "Containment-first mold remediation with safe removal, filtration, and moisture source correction support.",
-        emergencyLine: "(888) 480-7473",
+        emergencyLine: "+1 855-318-3325",
         heroPrimary: "Targeted Mold Remediation",
         heroSecondary: "Isolate affected zones, remove contamination safely, and reduce recurrence risk.",
         processSteps: [
@@ -25830,7 +25830,7 @@ const SERVICES = {
         name: "Hazmat Cleanup",
         navLabel: "HAZ",
         shortDescription: "Specialized hazardous material cleanup with controlled handling, containment, and compliant disposal workflows.",
-        emergencyLine: "(888) 480-7473",
+        emergencyLine: "+1 855-318-3325",
         heroPrimary: "Hazardous Material Response",
         heroSecondary: "Rapid containment and decontamination for complex property safety incidents.",
         processSteps: [
@@ -25903,7 +25903,24 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$location$2d$data$2e$t
 var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$services$2d$data$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/lib/services-data.ts [app-route] (ecmascript)");
 ;
 ;
-const REGION_CITY_ROWS = __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$location$2d$data$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["RAW_LOCATION_ROWS"];
+const ACTIVE_LOCATION_LIMIT = 250;
+const REGION_CITY_ROWS = (()=>{
+    let remaining = ACTIVE_LOCATION_LIMIT;
+    // Limit active pages to Canadian locations for now.
+    return __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$location$2d$data$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["RAW_LOCATION_ROWS"].filter((row)=>row.countryName === "Canada").flatMap((row)=>{
+        if (remaining <= 0) {
+            return [];
+        }
+        const activeCities = row.cities.slice(0, remaining);
+        remaining -= activeCities.length;
+        return activeCities.length > 0 ? [
+            {
+                ...row,
+                cities: activeCities
+            }
+        ] : [];
+    });
+})();
 function slugifyLocationSegment(value) {
     return value.normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
 }

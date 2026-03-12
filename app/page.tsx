@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { JsonLd } from "@/components/json-ld";
-import { LOCATION_PAGES, SERVICES, SERVICE_ORDER, getStates, type ServiceSlug } from "@/lib/restoration-data";
+import { LOCATION_PAGES, SERVICES, SERVICE_ORDER, type ServiceSlug } from "@/lib/restoration-data";
 import {
   EMERGENCY_PHONE_DISPLAY,
   EMERGENCY_PHONE_E164,
@@ -12,8 +12,6 @@ import {
 
 const primaryService = SERVICES["water-damage"];
 const featuredLocations = LOCATION_PAGES.slice(0, 8);
-const HOMEPAGE_STATE_LIMIT = 12;
-const HOMEPAGE_CITIES_PER_STATE = 12;
 
 export const metadata: Metadata = {
   title: "24/7 Emergency Restoration Support Across Canada",
@@ -42,18 +40,8 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  const states = getStates().slice(0, HOMEPAGE_STATE_LIMIT);
   const canadaLocationCount = LOCATION_PAGES.filter((location) => location.countryName === "Canada").length;
   const totalLocationCount = LOCATION_PAGES.length;
-  const stateToCities = new Map<string, (typeof LOCATION_PAGES)[number][]>();
-  for (const location of LOCATION_PAGES) {
-    const current = stateToCities.get(location.stateSlug);
-    if (current) {
-      current.push(location);
-    } else {
-      stateToCities.set(location.stateSlug, [location]);
-    }
-  }
 
   const organizationSchema = {
     "@context": "https://schema.org",
@@ -328,30 +316,19 @@ export default function Home() {
 
         <section className="iris-section iris-section-muted">
           <div className="iris-container">
-            <h2 className="iris-title">Find Help By Province</h2>
-            <p className="iris-subtitle">Browse local routes and open city-specific emergency pages quickly.</p>
-            <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-              {states.map((state) => {
-                const stateCities = stateToCities.get(state.slug)?.slice(0, HOMEPAGE_CITIES_PER_STATE) ?? [];
-                return (
-                  <div key={state.slug} className="iris-card iris-card-pad">
-                    <h3 className="text-xl font-bold text-[#0d2d44]">{state.name}</h3>
-                    <ul className="mt-4 space-y-2">
-                      {stateCities.map((city) => (
-                        <li key={city.citySlug}>
-                          <Link className="iris-link text-sm" href={`/${state.slug}/${city.citySlug}/water-damage`}>
-                            {city.cityName}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                );
-              })}
+            <h2 className="iris-title">Find Help By Location</h2>
+            <p className="iris-subtitle">Browse all {totalLocationCount} active Canadian location pages directly from the homepage.</p>
+            <div className="mt-8 grid gap-x-6 gap-y-2 md:grid-cols-3 xl:grid-cols-6">
+              {LOCATION_PAGES.map((location) => (
+                <Link
+                  key={`${location.stateSlug}-${location.citySlug}`}
+                  className="text-sm text-[#0d2d44] transition hover:text-[#1e4a63] hover:underline"
+                  href={`/${location.stateSlug}/${location.citySlug}/water-damage`}
+                >
+                  {location.cityName}, {location.stateName}
+                </Link>
+              ))}
             </div>
-            <p className="mt-6 text-sm text-[#5c6875]">
-              Showing {HOMEPAGE_STATE_LIMIT} provinces and up to {HOMEPAGE_CITIES_PER_STATE} cities each.
-            </p>
           </div>
         </section>
 
