@@ -1,6 +1,4 @@
 {
-  "/[state]/[city]/[service]/page": "app/[state]/[city]/[service]/page.js",
   "/page": "app/page.js",
-  "/services/[service]/page": "app/services/[service]/page.js",
-  "/sitemap.xml/route": "app/sitemap.xml/route.js"
+  "/services/[service]/page": "app/services/[service]/page.js"
 }
