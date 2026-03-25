@@ -11,7 +11,7 @@ export type LocationContent = {
   cityHosts: string[];
 };
 
-const ACTIVE_LOCATION_LIMIT = 850;
+const ACTIVE_LOCATION_LIMIT = 1350;
 
 const REGION_CITY_ROWS = (() => {
   let remaining = ACTIVE_LOCATION_LIMIT;
