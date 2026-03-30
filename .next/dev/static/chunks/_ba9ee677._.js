@@ -25867,20 +25867,83 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$location$2d$data$2e$t
 var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$services$2d$data$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/lib/services-data.ts [app-client] (ecmascript)");
 ;
 ;
-const ACTIVE_LOCATION_LIMIT = 850;
+const ACTIVE_LOCATION_LIMIT = 1850;
+const PRIORITY_CANADIAN_LOCATIONS = [
+    {
+        stateName: "British Columbia",
+        cityName: "VANCOUVER"
+    },
+    {
+        stateName: "Ontario",
+        cityName: "TORONTO"
+    },
+    {
+        stateName: "Alberta",
+        cityName: "EDMONTON"
+    },
+    {
+        stateName: "Ontario",
+        cityName: "MISSISSAUGA"
+    },
+    {
+        stateName: "Ontario",
+        cityName: "OTTAWA"
+    },
+    {
+        stateName: "Alberta",
+        cityName: "CALGARY"
+    },
+    {
+        stateName: "Ontario",
+        cityName: "OAKVILLE"
+    },
+    {
+        stateName: "Ontario",
+        cityName: "VAUGHAN"
+    }
+];
 const REGION_CITY_ROWS = (()=>{
-    let remaining = ACTIVE_LOCATION_LIMIT;
-    // Limit active pages to Canadian locations for now.
-    return __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$location$2d$data$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["RAW_LOCATION_ROWS"].filter((row)=>row.countryName === "Canada").flatMap((row)=>{
-        if (remaining <= 0) {
-            return [];
+    const canadaRows = __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$location$2d$data$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["RAW_LOCATION_ROWS"].filter((row)=>row.countryName === "Canada");
+    const selectedCitiesByState = new Map();
+    const seenPriorityKeys = new Set();
+    for (const { stateName, cityName } of PRIORITY_CANADIAN_LOCATIONS){
+        const row = canadaRows.find((candidate)=>candidate.stateName === stateName);
+        if (!row || !row.cities.includes(cityName)) {
+            continue;
         }
-        const activeCities = row.cities.slice(0, remaining);
+        const key = `${stateName}::${cityName}`;
+        if (seenPriorityKeys.has(key)) {
+            continue;
+        }
+        seenPriorityKeys.add(key);
+        selectedCitiesByState.set(stateName, [
+            ...selectedCitiesByState.get(stateName) ?? [],
+            cityName
+        ]);
+    }
+    let remaining = ACTIVE_LOCATION_LIMIT - seenPriorityKeys.size;
+    for (const row of canadaRows){
+        if (remaining <= 0) {
+            break;
+        }
+        const alreadySelected = new Set(selectedCitiesByState.get(row.stateName) ?? []);
+        const availableCities = row.cities.filter((city)=>!alreadySelected.has(city));
+        if (availableCities.length === 0) {
+            continue;
+        }
+        const activeCities = availableCities.slice(0, remaining);
         remaining -= activeCities.length;
-        return activeCities.length > 0 ? [
+        selectedCitiesByState.set(row.stateName, [
+            ...alreadySelected,
+            ...activeCities
+        ]);
+    }
+    return canadaRows.flatMap((row)=>{
+        const cities = selectedCitiesByState.get(row.stateName) ?? [];
+        return cities.length > 0 ? [
             {
                 ...row,
-                cities: activeCities
+                cities
             }
         ] : [];
     });
