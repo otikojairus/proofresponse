@@ -83,6 +83,15 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../app/957af49c9f40e16bd1c06476137d6bd88b7b06fcc672a6caa0deeeb65509154f.txt/route.ts
+{
+  type __IsExpected<Specific extends RouteHandlerConfig<"/957af49c9f40e16bd1c06476137d6bd88b7b06fcc672a6caa0deeeb65509154f.txt">> = Specific
+  const handler = {} as typeof import("../../app/957af49c9f40e16bd1c06476137d6bd88b7b06fcc672a6caa0deeeb65509154f.txt/route.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../app/957af49c9f40e16bd1c06476137d6bd88b7b06fcc672a6caa0deeeb65509154f/route.ts
 {
   type __IsExpected<Specific extends RouteHandlerConfig<"/957af49c9f40e16bd1c06476137d6bd88b7b06fcc672a6caa0deeeb65509154f">> = Specific
