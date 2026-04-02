@@ -105,7 +105,7 @@
         "transform": "lodash/{{member}}"
       }
     },
-    "outputFileTracingRoot": "/home/otiko/Desktop/THEFVG/restoxpertrestoration",
+    "outputFileTracingRoot": "/Users/jairusotiko/Desktop/thefvg/seo/proofresponse",
     "cacheComponents": false,
     "cacheLife": {
       "default": {
@@ -162,7 +162,7 @@
       "proxyPrefetch": "flexible",
       "optimisticClientCache": true,
       "manualClientBasePath": false,
-      "cpus": 7,
+      "cpus": 9,
       "memoryBasedWorkersCount": false,
       "imgOptConcurrency": null,
       "imgOptTimeoutInSeconds": 7,
@@ -298,11 +298,11 @@
     "bundlePagesRouterDependencies": false,
     "configFileName": "next.config.ts",
     "turbopack": {
-      "root": "/home/otiko/Desktop/THEFVG/restoxpertrestoration"
+      "root": "/Users/jairusotiko/Desktop/thefvg/seo/proofresponse"
     },
     "distDirRoot": ".next"
   },
-  "appDir": "/home/otiko/Desktop/THEFVG/restoxpertrestoration",
+  "appDir": "/Users/jairusotiko/Desktop/thefvg/seo/proofresponse",
   "relativeAppDir": "",
   "files": [
     ".next/routes-manifest.json",
