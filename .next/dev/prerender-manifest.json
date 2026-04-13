@@ -1,1 +1,11 @@
-{"version":4,"routes":{"/services/water-damage":{},"/services/fire-damage":{},"/services/mold-remediation":{},"/services/hazmat-cleanup":{}},"dynamicRoutes":{"/services/[service]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/services/[service]","routeRegex":"^\\/services\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"0a8c75ede1dd0e3b566df419e8763738","previewModeSigningKey":"59e7de112fac3ec1056156ad4a022d87fc490c87d89abfe1df6b0bc161736247","previewModeEncryptionKey":"dc9071bfc9350ebaee5ffacbdb127719527158a3f23672929ac0eb1124646c1d"}}
+{
+  "version": 4,
+  "routes": {},
+  "dynamicRoutes": {},
+  "notFoundRoutes": [],
+  "preview": {
+    "previewModeId": "814f3e2f6c5fed71bf72a0f93dd72d3a",
+    "previewModeSigningKey": "b07eae594e8aa98827f4f26ff805cfda007e244c705e1a762b3faf2228d8f3c9",
+    "previewModeEncryptionKey": "328748acd7a1359b6954277d8f45688490fe8452337bec5e67fda8174a9ad3fb"
+  }
+}

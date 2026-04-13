@@ -445,6 +445,10 @@
     position: relative;
   }
 
+  .static {
+    position: static;
+  }
+
   .inset-0 {
     inset: calc(var(--spacing) * 0);
   }
@@ -895,7 +899,7 @@
 
   @supports (color: lab(0% 0 0)) {
     .from-\[\#00b4d8\]\/16 {
-      --tw-gradient-from: lab(67.1885% -29.8434 -29.6417 / .16);
+      --tw-gradient-from: lab(67.1886% -29.8436 -29.6417 / .16);
     }
   }
 
@@ -1133,6 +1137,10 @@
 
   .text-slate-700 {
     color: var(--color-slate-700);
+  }
+
+  .lowercase {
+    text-transform: lowercase;
   }
 
   .uppercase {
