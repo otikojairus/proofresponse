@@ -78,6 +78,12 @@
       "namedRegex": "^/favicon\\.ico(?:/)?$"
     },
     {
+      "page": "/fr/quebec/abercorn/water-damage",
+      "regex": "^/fr/quebec/abercorn/water\\-damage(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/fr/quebec/abercorn/water\\-damage(?:/)?$"
+    },
+    {
       "page": "/robots.txt",
       "regex": "^/robots\\.txt(?:/)?$",
       "routeKeys": {},

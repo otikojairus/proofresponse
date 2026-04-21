@@ -5,6 +5,7 @@
   "/_global-error/page": "/_global-error",
   "/_not-found/page": "/_not-found",
   "/favicon.ico/route": "/favicon.ico",
+  "/fr/quebec/abercorn/water-damage/page": "/fr/quebec/abercorn/water-damage",
   "/page": "/",
   "/robots.txt/route": "/robots.txt",
   "/services/[service]/page": "/services/[service]",
