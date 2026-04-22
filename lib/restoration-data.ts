@@ -11,7 +11,7 @@ export type LocationContent = {
   cityHosts: string[];
 };
 
-const ACTIVE_LOCATION_LIMIT = 4696;
+const ACTIVE_LOCATION_LIMIT = 5870;
 const PRIORITY_CANADIAN_LOCATIONS = [
   { stateName: "British Columbia", cityName: "VANCOUVER" },
   { stateName: "Ontario", cityName: "TORONTO" },
