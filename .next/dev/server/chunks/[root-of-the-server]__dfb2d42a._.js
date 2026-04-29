@@ -25903,7 +25903,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$location$2d$data$2e$t
 var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$services$2d$data$2e$ts__$5b$middleware$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/lib/services-data.ts [middleware] (ecmascript)");
 ;
 ;
-const ACTIVE_LOCATION_LIMIT = 4696;
+const ACTIVE_LOCATION_LIMIT = 5870;
 const PRIORITY_CANADIAN_LOCATIONS = [
     {
         stateName: "British Columbia",

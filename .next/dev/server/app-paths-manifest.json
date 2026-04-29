@@ -1,7 +1,4 @@
 {
-  "/[state]/[city]/[service]/page": "app/[state]/[city]/[service]/page.js",
   "/_not-found/page": "app/_not-found/page.js",
-  "/fr/quebec/abercorn/water-damage/page": "app/fr/quebec/abercorn/water-damage/page.js",
-  "/page": "app/page.js",
-  "/quebec/abercorn/water-damage/page": "app/quebec/abercorn/water-damage/page.js"
+  "/page": "app/page.js"
 }
