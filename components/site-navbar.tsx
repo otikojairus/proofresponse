@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { SERVICES, SERVICE_ORDER } from "@/lib/restoration-data";
 import { EMERGENCY_PHONE_DISPLAY, SITE_NAME } from "@/lib/seo";
@@ -21,8 +22,8 @@ export function SiteNavbar() {
     <>
       <header className="fixed inset-x-0 top-0 z-50 border-b-2 border-[#ffd700]/30 bg-white/95 shadow-[0_8px_26px_rgba(13,45,68,0.1)] backdrop-blur-xl">
         <div className="iris-container flex min-h-[82px] items-center gap-4 py-3">
-          <Link href="/" onClick={() => setIsDrawerOpen(false)} className="shrink-0">
-            <p className="text-sm font-black tracking-[0.12em] text-[#0d2d44] sm:text-base">{SITE_NAME}</p>
+          <Link href="/" onClick={() => setIsDrawerOpen(false)} className="shrink-0" aria-label={`${SITE_NAME} home`}>
+            <Image src="/favicon.ico" alt={SITE_NAME} width={48} height={48} unoptimized className="object-contain" />
           </Link>
 
           <nav className="hidden flex-1 items-center justify-center gap-1 lg:flex">
