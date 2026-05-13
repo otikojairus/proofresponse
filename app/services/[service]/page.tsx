@@ -8,6 +8,8 @@ import {
   EMERGENCY_PHONE_E164,
   SITE_NAME,
   absoluteUrl,
+  buildSeoDescription,
+  buildSeoTitle,
   serviceLocationKeyword,
 } from "@/lib/seo";
 
@@ -176,8 +178,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
-  const title = `${service.name} Service Areas Across Canada`;
-  const description = `${service.name} coverage across Canadian cities. Open a local page and call ${EMERGENCY_PHONE_DISPLAY} for emergency response.`;
+  const title = buildSeoTitle(service.name, "Canada", SITE_NAME);
+  const description = buildSeoDescription(service.name, "Canada", EMERGENCY_PHONE_DISPLAY);
   const canonicalPath = `/services/${service.slug}`;
 
   return {
@@ -273,10 +275,24 @@ export default async function ServiceHubPage({ params, searchParams }: PageProps
     url: absoluteUrl(canonicalPath),
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: service.faqs.slice(0, 3).map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
+      },
+    })),
+  };
+
   return (
     <main className="iris-shell">
       <JsonLd data={breadcrumbSchema} />
       <JsonLd data={serviceSchema} />
+      <JsonLd data={faqSchema} />
 
       <section className="iris-hero iris-section py-14">
         <div className="iris-container">
@@ -286,12 +302,11 @@ export default async function ServiceHubPage({ params, searchParams }: PageProps
             <span>Canada Coverage</span>
           </h1>
           <p className="iris-hero-lead max-w-3xl">
-            {service.shortDescription} This page includes first-24-hour priorities, scenario-specific guidance,
-            process expectations, and service + location routes for fast local navigation.
-          </p>
-          <p className="mt-4 max-w-3xl text-sm text-[#d6e6f0]">
-            Use this hub when you need to understand response flow quickly, compare practical service coverage, and
-            move directly to a city-level page for immediate dispatch.
+            {service.shortDescription} This national pillar is built to help property owners, managers, and operations
+            teams move from broad research to local action without friction. You can review first-24-hour priorities,
+            understand practical scope expectations, compare common incident scenarios, and open city-specific pages
+            that match urgent local intent. If you need immediate response, use the phone CTA below for live intake and
+            dispatch support.
           </p>
           <div className="iris-actions">
             <a href={`tel:${EMERGENCY_PHONE_DISPLAY.replace(/[^0-9]/g, "")}`} className="iris-btn iris-btn-primary">
@@ -510,7 +525,7 @@ export default async function ServiceHubPage({ params, searchParams }: PageProps
                     <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#ffd700] text-[#0d2d44]">
                       <i className="fa-solid fa-link text-[0.65rem]" aria-hidden="true" />
                     </span>
-                    <span>{location.cityName}</span>
+                    <span>{serviceLocationKeyword(service.name, location.cityName)}</span>
                   </Link>
                 </li>
               ))}
@@ -550,6 +565,18 @@ export default async function ServiceHubPage({ params, searchParams }: PageProps
                 </li>
               ))}
             </ol>
+          </div>
+
+          <div className="iris-card iris-card-pad">
+            <h2 className="iris-title text-2xl">{service.name} FAQs</h2>
+            <div className="mt-6 space-y-4">
+              {service.faqs.slice(0, 3).map((faq) => (
+                <div key={faq.q} className="iris-panel">
+                  <h3 className="font-semibold text-[#0d2d44]">{faq.q}</h3>
+                  <p className="mt-3 text-sm text-[#5c6875]">{faq.a}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

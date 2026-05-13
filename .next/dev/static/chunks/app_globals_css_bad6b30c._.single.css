@@ -530,10 +530,6 @@
     height: calc(var(--spacing) * 10);
   }
 
-  .h-12 {
-    height: calc(var(--spacing) * 12);
-  }
-
   .h-24 {
     height: calc(var(--spacing) * 24);
   }
@@ -556,10 +552,6 @@
 
   .w-10 {
     width: calc(var(--spacing) * 10);
-  }
-
-  .w-12 {
-    width: calc(var(--spacing) * 12);
   }
 
   .w-24 {

@@ -2,12 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/json-ld";
-import { getLocation, getServiceBySlug } from "@/lib/restoration-data";
+import { getLocation, getServiceBySlug, SERVICE_ORDER } from "@/lib/restoration-data";
 import {
   EMERGENCY_PHONE_DISPLAY,
   EMERGENCY_PHONE_E164,
   SITE_NAME,
   absoluteUrl,
+  buildSeoDescription,
+  buildSeoTitle,
   serviceLocationKeyword,
 } from "@/lib/seo";
 
@@ -156,6 +158,19 @@ type WaterKeywordSection = {
   steps: string[];
   reasons: string[];
   cta: string;
+};
+
+const CLIMATE_BY_STATE: Record<string, string> = {
+  alberta: "cold winters and dry seasonal shifts",
+  "british-columbia": "coastal moisture and frequent rainfall cycles",
+  manitoba: "strong freeze-thaw swings and dry winter air",
+  "new-brunswick": "coastal humidity and winter freeze exposure",
+  "newfoundland-and-labrador": "marine moisture with frequent storm systems",
+  "nova-scotia": "Atlantic humidity and salt-air weather patterns",
+  ontario: "humid summers with freeze-thaw winter cycles",
+  "prince-edward-island": "coastal winds and humidity fluctuations",
+  quebec: "cold winter freeze cycles and humid summer periods",
+  saskatchewan: "dry-air winters and large temperature swings",
 };
 
 function buildWaterKeywordSections(cityName: string): WaterKeywordSection[] {
@@ -447,8 +462,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const primaryKeyword = serviceLocationKeyword(service.name, location.cityName);
   const secondaryKeyword = service.name;
   const canonicalPath = `/${location.stateSlug}/${location.citySlug}/${service.slug}`;
-  const title = `${primaryKeyword} | 24/7 Emergency Response`;
-  const description = `${primaryKeyword} for homes and businesses in ${location.cityName}, ${location.stateName}. Call ${EMERGENCY_PHONE_DISPLAY} for immediate dispatch.`;
+  const title = buildSeoTitle(service.name, location.cityName, SITE_NAME);
+  const description = buildSeoDescription(primaryKeyword, location.cityName, EMERGENCY_PHONE_DISPLAY);
   const isWaterDamage = service.slug === "water-damage";
   const waterKeywordVariants = isWaterDamage
     ? WATER_DAMAGE_KEYWORDS.map(({ phrase }) => `${phrase} ${location.cityName}`)
@@ -506,6 +521,15 @@ export default async function LocalServicePage({ params }: PageProps) {
   const phoneHref = `tel:${EMERGENCY_PHONE_DISPLAY.replace(/[^0-9]/g, "")}`;
   const isWaterDamage = service.slug === "water-damage";
   const waterKeywordSections = isWaterDamage ? buildWaterKeywordSections(location.cityName) : [];
+  const localClimate = CLIMATE_BY_STATE[location.stateSlug] ?? "seasonal humidity and temperature swings";
+  const cityFacts = [
+    `${location.cityName} sits within ${location.stateName}, so response plans are tailored to local municipal access routes and neighborhood service patterns.`,
+    `${location.cityName} properties are affected by ${localClimate}, which changes drying timelines, dehumidification strategy, and material risk.`,
+    `Technicians stage around major corridors and commercial landmarks in ${location.cityName} to reduce dispatch delays during emergency calls.`,
+  ];
+  const relatedServiceLinks = SERVICE_ORDER.filter((candidate) => candidate !== service.slug)
+    .map((slug) => getServiceBySlug(slug))
+    .filter((candidate): candidate is NonNullable<ReturnType<typeof getServiceBySlug>> => Boolean(candidate));
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -610,12 +634,12 @@ export default async function LocalServicePage({ params }: PageProps) {
 
           <h1 className="iris-hero-title mt-4">{primaryKeyword}</h1>
           <p className="iris-hero-lead max-w-3xl">
-            If your home or business needs immediate {secondaryKeyword.toLowerCase()} in {location.cityName}, call{" "}
-            {EMERGENCY_PHONE_DISPLAY} for live emergency intake and rapid dispatch.
-          </p>
-          <p className="mt-4 max-w-3xl text-sm text-[#d6e6f0]">
-            This local page covers response steps, first-24-hour priorities, scenario-specific guidance, and practical
-            decision support for property owners and managers in {location.cityName}.
+            If your home or business needs immediate {secondaryKeyword.toLowerCase()} in {location.cityName}, this
+            page gives you a local decision guide you can act on quickly. It outlines first-response priorities,
+            scenario-specific mitigation steps, and what to expect from intake through documented stabilization.
+            You can use the service links below to compare related emergency options in the same city, then call{" "}
+            {EMERGENCY_PHONE_DISPLAY} for live dispatch and real-time coordination when time-sensitive damage cannot
+            wait.
           </p>
 
           <div className="hidden sm:block">
@@ -649,6 +673,38 @@ export default async function LocalServicePage({ params }: PageProps) {
                 {secondaryKeyword} is a structured response including assessment, containment, cleanup, drying or
                 decontamination, and restoration planning adapted for {location.cityName} properties.
               </p>
+            </div>
+
+            <div className="iris-card iris-card-pad">
+              <h2 className="iris-title text-2xl">{location.cityName} Location Facts</h2>
+              <div className="mt-4 space-y-3">
+                {cityFacts.map((fact) => (
+                  <p key={fact} className="iris-panel text-sm text-[#5c6875]">
+                    {fact}
+                  </p>
+                ))}
+              </div>
+            </div>
+
+            <div className="iris-band rounded-2xl px-6 py-8">
+              <h2 className="iris-title text-2xl">Related Services In {location.cityName}</h2>
+              <p className="iris-subtitle">
+                Compare other emergency routes in this city and escalate quickly when the damage profile changes.
+              </p>
+              <div className="mt-5 grid gap-3 md:grid-cols-3">
+                {relatedServiceLinks.map((relatedService) => (
+                  <Link
+                    key={relatedService.slug}
+                    href={`/${location.stateSlug}/${location.citySlug}/${relatedService.slug}`}
+                    className="iris-panel transition-transform duration-300 hover:-translate-y-0.5"
+                  >
+                    <p className="font-semibold text-[#0d2d44]">
+                      {serviceLocationKeyword(relatedService.name, location.cityName)}
+                    </p>
+                    <p className="mt-1 text-sm text-[#5c6875]">{relatedService.shortDescription}</p>
+                  </Link>
+                ))}
+              </div>
             </div>
 
             <div className="iris-band rounded-2xl px-6 py-8">
@@ -915,10 +971,10 @@ export default async function LocalServicePage({ params }: PageProps) {
             <h2 className="iris-title text-2xl">{primaryKeyword} FAQs</h2>
             <div className="mt-6 space-y-4">
               {service.faqs.map((faq) => (
-                <details key={faq.q} className="iris-panel">
-                  <summary className="cursor-pointer font-semibold text-[#0d2d44]">{faq.q}</summary>
+                <div key={faq.q} className="iris-panel">
+                  <h3 className="font-semibold text-[#0d2d44]">{faq.q}</h3>
                   <p className="mt-3 text-sm text-[#5c6875]">{faq.a}</p>
-                </details>
+                </div>
               ))}
             </div>
           </div>

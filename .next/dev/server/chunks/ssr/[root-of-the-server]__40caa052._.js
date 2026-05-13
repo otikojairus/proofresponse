@@ -26077,6 +26077,10 @@ __turbopack_context__.s([
     ()=>SITE_NAME,
     "absoluteUrl",
     ()=>absoluteUrl,
+    "buildSeoDescription",
+    ()=>buildSeoDescription,
+    "buildSeoTitle",
+    ()=>buildSeoTitle,
     "getSiteUrl",
     ()=>getSiteUrl,
     "serviceLocationKeyword",
@@ -26094,6 +26098,24 @@ function absoluteUrl(path) {
 }
 function serviceLocationKeyword(serviceName, cityName) {
     return `${serviceName} ${cityName}`;
+}
+function buildSeoTitle(primaryKeyword, cityName, brand) {
+    const raw = `${primaryKeyword} ${cityName} | ${brand}`;
+    if (raw.length <= 60) {
+        return raw;
+    }
+    const fallback = `${primaryKeyword} | ${brand}`;
+    if (fallback.length <= 60) {
+        return fallback;
+    }
+    return `${primaryKeyword.slice(0, 56).trimEnd()}...`;
+}
+function buildSeoDescription(keyword, cityName, phone) {
+    const base = `${keyword} in ${cityName}. 24/7 local response for homes and businesses. Call ${phone} now for immediate dispatch.`;
+    if (base.length <= 160) {
+        return base;
+    }
+    return `${keyword} in ${cityName}. 24/7 emergency service. Call ${phone} now.`;
 }
 }),
 "[project]/components/site-footer.tsx [app-rsc] (ecmascript)", ((__turbopack_context__) => {
